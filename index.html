@@ -1185,55 +1185,8 @@
         });
       }, observerOptions);
 
-      // Observe all elements with animation classes
-      document.querySelectorAll('.service-card, .tech-category, .why-choose-item, .client-card, .contact-item, .footer-column').forEach(el => {
-        observer.observe(el);
-      });
-
-      // Add loaded class to body for initial animations
-      document.body.classList.add('loaded')
-
-        <!-- LANGUAGE SWITCHER -->
-<div id="language-switcher">
-  <button type="button" id="lang-bg">🇧🇬 BG</button>
-  <button type="button" id="lang-en">🇬🇧 EN</button>
-</div>
-
-<script>
-  const languageSwitcher = document.getElementById('language-switcher');
-  const bgButton = document.getElementById('lang-bg');
-  const enButton = document.getElementById('lang-en');
-
-  languageSwitcher.style.cssText = `
-    position: fixed;
-    top: 90px;
-    right: 20px;
-    z-index: 9999;
-    display: flex;
-    gap: 6px;
-  `;
-
-  document.querySelectorAll('#language-switcher button').forEach(button => {
-    button.style.cssText = `
-      padding: 7px 11px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      background: white;
-      color: #1e293b;
-      cursor: pointer;
-      font-weight: 600;
-    `;
-  });
-
-  bgButton.addEventListener('click', () => {
-    document.documentElement.lang = 'bg';
-    localStorage.setItem('siteLanguage', 'bg');
-  });
-
-  enButton.addEventListener('click', () => {
-    document.documentElement.lang = 'en';
-    localStorage.setItem('siteLanguage', 'en');
-  });
+    
 </script>
   </body>
 </html>
+
