@@ -1184,7 +1184,55 @@
           }
         });
       }, observerOptions);
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in');
+          }
+        });
+      }, observerOptions);
 
+      // LANGUAGE SWITCHER
+      const languageSwitcher = document.createElement('div');
+      languageSwitcher.id = 'language-switcher';
+
+      languageSwitcher.innerHTML = `
+        <button type="button" id="lang-bg">🇧🇬 BG</button>
+        <button type="button" id="lang-en">🇬🇧 EN</button>
+      `;
+
+      languageSwitcher.style.cssText = `
+        position: fixed;
+        top: 90px;
+        right: 20px;
+        z-index: 9999;
+        display: flex;
+        gap: 6px;
+      `;
+
+      document.body.appendChild(languageSwitcher);
+
+      document.querySelectorAll('#language-switcher button').forEach(button => {
+        button.style.cssText = `
+          padding: 7px 11px;
+          border: 1px solid #ddd;
+          border-radius: 6px;
+          background: white;
+          color: #1e293b;
+          cursor: pointer;
+          font-weight: 600;
+        `;
+      });
+
+      document.getElementById('lang-bg').addEventListener('click', () => {
+        document.documentElement.lang = 'bg';
+        localStorage.setItem('siteLanguage', 'bg');
+      });
+
+      document.getElementById('lang-en').addEventListener('click', () => {
+        document.documentElement.lang = 'en';
+        localStorage.setItem('siteLanguage', 'en');
+      });
     
 </script>
   </body>
