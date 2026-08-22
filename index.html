@@ -1,0 +1,1197 @@
+<!doctype html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SEPANG TECH GROUP ЕООД - Професионални уеб услуги, разработка на софтуер по поръчка, уеб сайтове, онлайн магазини и ИТ консултации за бизнеса ви." />
+    <meta name="keywords" content="уеб услуги, уеб сайт, онлайн магазин, софтуер по поръчка, SEO, уеб приложения, SEPANG TECH GROUP">
+    <title>SEPANG TECH GROUP | Уеб услуги и дигитални решения</title>
+    <meta property="og:title" content="SEPANG TECH GROUP | Уеб услуги и дигитални решения">
+    <meta property="og:description" content="Уеб сайтове, онлайн магазини, софтуер по поръчка, SEO и дигитални решения.">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"СЕПАНГ ГРУП ЕООД","alternateName":"SEPANG TECH GROUP","email":"sepanggroupltd@gmail.com"}</script>
+    <style>
+      :root {
+        --primary-color: #2563eb;
+        --secondary-color: #1e40af;
+        --accent-color: #0ea5e9;
+        --light-color: #f8fafc;
+        --dark-color: #1e293b;
+        --gray-color: #64748b;
+        --success-color: #10b981;
+        --warning-color: #f59e0b;
+        --danger-color: #ef4444;
+        --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --font-secondary: 'JetBrains Mono', monospace;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-primary);
+        line-height: 1.6;
+        color: var(--dark-color);
+        background-color: var(--light-color);
+      }
+
+      /* Header Styles */
+      header {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        color: white;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .logo-icon {
+        width: 50px;
+        height: 50px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: var(--primary-color);
+        font-size: 1.2rem;
+      }
+
+      .logo-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .logo-subtitle {
+        font-size: 0.8rem;
+        opacity: 0.9;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      nav a:hover {
+        color: var(--accent-color);
+      }
+
+      nav a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--accent-color);
+        transition: width 0.3s ease;
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+
+      .cta-button {
+        background: white;
+        color: var(--primary-color);
+        padding: 0.5rem 1.5rem;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        border: 2px solid white;
+      }
+
+      .cta-button:hover {
+        background: transparent;
+        color: white;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        color: white;
+        padding: 4rem 0;
+        text-align: center;
+      }
+
+      .hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        opacity: 0.95;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 0.8rem 2rem;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      .btn-primary {
+        background: white;
+        color: var(--primary-color);
+        border: 2px solid white;
+      }
+
+      .btn-primary:hover {
+        background: transparent;
+        color: white;
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      /* Services Section */
+      .services {
+        padding: 4rem 0;
+        background: var(--light-color);
+      }
+
+      .services-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: var(--dark-color);
+      }
+
+      .section-subtitle {
+        text-align: center;
+        font-size: 1.1rem;
+        color: var(--gray-color);
+        max-width: 800px;
+        margin: 0 auto 3rem;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .service-card {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .service-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 2rem;
+        color: white;
+      }
+
+      .service-card h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: var(--dark-color);
+      }
+
+      .service-card p {
+        color: var(--gray-color);
+        margin-bottom: 1.5rem;
+      }
+
+      .service-card .btn {
+        background: var(--primary-color);
+        color: white;
+        border: 2px solid var(--primary-color);
+      }
+
+      .service-card .btn:hover {
+        background: var(--secondary-color);
+        border-color: var(--secondary-color);
+      }
+
+      /* About Section */
+      .about {
+        padding: 4rem 0;
+        background: white;
+      }
+
+      .about-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .about-image {
+        width: 100%;
+        height: 400px;
+        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2rem;
+      }
+
+      .about-content h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: var(--dark-color);
+      }
+
+      .about-content p {
+        color: var(--gray-color);
+        margin-bottom: 1.5rem;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 1.5rem;
+        background: var(--light-color);
+        border-radius: 10px;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: var(--gray-color);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* Technology Section */
+      .technologies {
+        padding: 4rem 0;
+        background: var(--light-color);
+      }
+
+      .technologies-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        text-align: center;
+      }
+
+      .tech-categories {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .tech-category {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .tech-category h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: var(--dark-color);
+        border-bottom: 2px solid var(--primary-color);
+        padding-bottom: 0.5rem;
+      }
+
+      .tech-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      .tech-item {
+        background: var(--light-color);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        color: var(--dark-color);
+        font-weight: 500;
+      }
+
+      /* Clients Section */
+      .clients {
+        padding: 4rem 0;
+        background: white;
+      }
+
+      .clients-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        text-align: center;
+      }
+
+      .clients-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .client-card {
+        background: var(--light-color);
+        padding: 2rem;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 150px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .client-card:hover {
+        background: white;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .client-logo {
+        max-width: 150px;
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+      }
+
+      .client-card:hover .client-logo {
+        opacity: 1;
+      }
+
+      /* Why Choose Us Section */
+      .why-choose {
+        padding: 4rem 0;
+        background: var(--light-color);
+      }
+
+      .why-choose-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .why-choose-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .why-choose-item {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .why-choose-item h3 {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: var(--dark-color);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .why-choose-item p {
+        color: var(--gray-color);
+        line-height: 1.7;
+      }
+
+      /* Contact Section */
+      .contact {
+        padding: 4rem 0;
+        background: white;
+      }
+
+      .contact-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+
+      .contact-info h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: var(--dark-color);
+      }
+
+      .contact-info p {
+        color: var(--gray-color);
+        margin-bottom: 2rem;
+      }
+
+      .contact-details {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        background: var(--primary-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.2rem;
+      }
+
+      .contact-text h4 {
+        font-weight: bold;
+        color: var(--dark-color);
+        margin-bottom: 0.25rem;
+      }
+
+      .contact-text p {
+        color: var(--gray-color);
+        margin: 0;
+      }
+
+      .contact-form {
+        background: var(--light-color);
+        padding: 2rem;
+        border-radius: 10px;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: var(--dark-color);
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary-color);
+      }
+
+      .form-group textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .form-group .btn {
+        background: var(--primary-color);
+        color: white;
+        border: 2px solid var(--primary-color);
+        width: 100%;
+      }
+
+      .form-group .btn:hover {
+        background: var(--secondary-color);
+        border-color: var(--secondary-color);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--dark-color);
+        color: white;
+        padding: 3rem 0 1rem;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-column h4 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: white;
+      }
+
+      .footer-column ul {
+        list-style: none;
+      }
+
+      .footer-column li {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-column a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-column a:hover {
+        color: var(--accent-color);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-link {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        background: var(--primary-color);
+        transform: translateY(-3px);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .header-container {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 1rem;
+          text-align: center;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .about-container {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-container {
+          grid-template-columns: 1fr;
+        }
+
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in {
+        animation: fadeIn 0.6s ease-out forwards;
+      }
+
+      /* Utility Classes */
+      .text-center {
+        text-align: center;
+      }
+
+      .mt-1 { margin-top: 0.5rem; }
+      .mt-2 { margin-top: 1rem; }
+      .mt-3 { margin-top: 1.5rem; }
+      .mt-4 { margin-top: 2rem; }
+
+      .mb-1 { margin-bottom: 0.5rem; }
+      .mb-2 { margin-bottom: 1rem; }
+      .mb-3 { margin-bottom: 1.5rem; }
+      .mb-4 { margin-bottom: 2rem; }
+
+      .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+      .py-3 { padding-top: 1rem; padding-bottom: 1rem; }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+    
+      .mobile-menu-button{display:none;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:8px;padding:.55rem .75rem;font-size:1.1rem;cursor:pointer}
+      @media (max-width: 900px){
+        header{padding:.75rem 0}.header-container{flex-direction:row!important;gap:0}.mobile-menu-button{display:block}header nav{display:none;position:absolute;left:0;right:0;top:74px;background:#12327f;padding:1rem;box-shadow:0 15px 30px rgba(0,0,0,.2)}header nav.open{display:block}header nav ul{flex-direction:column;gap:.8rem!important;margin:0;padding:0;text-align:center}header nav a{display:block;padding:.45rem}.cta-button{display:none}.logo-text{font-size:1.05rem}.logo-icon{width:42px;height:42px}.hero{padding:5rem 0 4rem}.hero h1{font-size:clamp(2.2rem,9vw,4rem)}.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tech-categories{grid-template-columns:repeat(2,minmax(0,1fr))}.why-choose-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+      @media (max-width: 600px){.services-grid,.tech-categories,.why-choose-grid{grid-template-columns:1fr}.hero-buttons .btn{width:100%}.section-title{font-size:2rem}.about-image{height:260px}.footer-grid{grid-template-columns:1fr}.contact-form{padding:1.25rem}}
+</style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <div class="logo-icon">ST</div>
+          <div>
+            <div class="logo-text">SEPANG TECH GROUP</div>
+            <div class="logo-subtitle">ЕООД</div>
+          </div>
+        </div>
+        <button class="mobile-menu-button" aria-label="Отвори меню" aria-expanded="false">☰</button>
+        <nav>
+          <ul>
+            <li><a href="#hero">Начало</a></li>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#about">За нас</a></li>
+            <li><a href="#technologies">Технологии</a></li>
+            <li><a href="#clients">Клиенти</a></li>
+            <li><a href="#contact">Контакт</a></li>
+          </ul>
+        </nav>
+        <a href="#contact" class="cta-button">Свържете се</a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero-container">
+        <h1 class="animate-fade-in">Професионални УЕБ УСЛУГИ</h1>
+        <p class="animate-fade-in" style="animation-delay: 0.2s;">SEPANG TECH GROUP ви предлага пълен спектър от ИТ решения за бизнеса ви - от разработка на софтуер по поръчка до създаване на уеб сайтове и онлайн магазини</p>
+        <div class="hero-buttons">
+          <a href="#services" class="btn btn-primary animate-fade-in" style="animation-delay: 0.4s;">Вижте услугите ни</a>
+          <a href="#contact" class="btn btn-secondary animate-fade-in" style="animation-delay: 0.6s;">Свържете се сега</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <div class="services-container">
+        <h2 class="section-title">Нашите Услуги</h2>
+        <p class="section-subtitle">Предлагаме пълният спектър от ИТ услуги за вашия бизнес, основани на най-добрите световни практики и технологии</p>
+        <div class="services-grid">
+          <div class="service-card animate-fade-in" style="animation-delay: 0.1s;">
+            <div class="service-icon">💻</div>
+            <h3>Разработка на Софтуер по Поръчка</h3>
+            <p>Създаваме специализиран софтуер според вашите специфични бизнес изисквания и нужди. Решенията ни са скалваеми, сигурни и оптимизирани за вашия бизнес.</p>
+            <a href="#contact" class="btn">Запитване</a>
+          </div>
+          <div class="service-card animate-fade-in" style="animation-delay: 0.2s;">
+            <div class="service-icon">🌐</div>
+            <h3>Изработка на Уеб Сайтове</h3>
+            <p>Професионални уеб сайтове за представяне на вашия бизнес онлайн. Съвременен дизайн, бързо зареждане и оптимизация за търсачките машини.</p>
+            <a href="#contact" class="btn">Запитване</a>
+          </div>
+          <div class="service-card animate-fade-in" style="animation-delay: 0.3s;">
+            <div class="service-icon">🛒</div>
+            <h3>Онлайн Магазини</h3>
+            <p>Пълно функционални онлайн магазини с интегрирани плащания, кошница и управление на продукти. Достигнете до повече клиенти и увеличете продажбите си.</p>
+            <a href="#contact" class="btn">Запитване</a>
+          </div>
+          <div class="service-card animate-fade-in" style="animation-delay: 0.4s;">
+            <div class="service-icon">📱</div>
+            <h3>Мобилни Приложения</h3>
+            <p>Разработка на мобилни приложения за iOS и Android. Давайте на вашите клиенти възможност да ползват услугите ви от въвсякъде.</p>
+            <a href="#contact" class="btn">Запитване</a>
+          </div>
+          <div class="service-card animate-fade-in" style="animation-delay: 0.5s;">
+            <div class="service-icon">🔧</div>
+            <h3>Internet of Things (IoT)</h3>
+            <p>Разработка на IoT решения за интелигентни устройства и системи. Възможности за автоматизация и мониторинг в реално време.</p>
+            <a href="#contact" class="btn">Запитване</a>
+          </div>
+          <div class="service-card animate-fade-in" style="animation-delay: 0.6s;">
+            <div class="service-icon">💡</div>
+            <h3>ИТ Консултиране</h3>
+            <p>Експертни консултации за вземане на правилните решения в дигиталното пространство. Помогаме ви да изберете най-подходящите технологии за бизнеса си.</p>
+            <a href="#contact" class="btn">Запитване</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="about-container">
+        <div class="about-image animate-fade-in">
+          <span>🏢 SEPANG TECH GROUP</span>
+        </div>
+        <div class="about-content animate-fade-in" style="animation-delay: 0.2s;">
+          <h2>За SEPANG TECH GROUP</h2>
+          <p>SEPANG TECH GROUP ЕООД сме технологичен партньор за разработка на дигитални решения в разработката на ИТ решения за бизнес клиенти. Ние вярваме в партньорството с клиентите и изграждането на дълготрайни отношения, основани на доверие и качество.</p>
+          <p>Работим с професионален подход и подбираме технологиите според в разработката на комплексни софтуерни системи, уеб приложения и мобилни решения. Използваме най-съвременните технологии и методологии за гарантиране на високо качество и надеждност.</p>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number">01</div>
+              <div class="stat-label">Партньор за проекта</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">∞</div>
+              <div class="stat-label">Възможности за развитие</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Дигитална достъпност</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="technologies" class="technologies">
+      <div class="technologies-container">
+        <h2 class="section-title">Технологии, които използваме</h2>
+        <p class="section-subtitle">Работим с най-съвременните технологии и платформи за да гарантираме най-доброто качество и производителност</p>
+        <div class="tech-categories">
+          <div class="tech-category animate-fade-in" style="animation-delay: 0.1s;">
+            <h3>Back-End Разработка</h3>
+            <div class="tech-list">
+              <span class="tech-item">Java</span>
+              <span class="tech-item">C#</span>
+              <span class="tech-item">.NET Core</span>
+              <span class="tech-item">PHP</span>
+              <span class="tech-item">Node.js</span>
+              <span class="tech-item">Python</span>
+              <span class="tech-item">Spring Boot</span>
+              <span class="tech-item">Django</span>
+              <span class="tech-item">Laravel</span>
+            </div>
+          </div>
+          <div class="tech-category animate-fade-in" style="animation-delay: 0.2s;">
+            <h3>Front-End Разработка</h3>
+            <div class="tech-list">
+              <span class="tech-item">HTML5</span>
+              <span class="tech-item">CSS3</span>
+              <span class="tech-item">JavaScript</span>
+              <span class="tech-item">TypeScript</span>
+              <span class="tech-item">React</span>
+              <span class="tech-item">Angular</span>
+              <span class="tech-item">Vue.js</span>
+              <span class="tech-item">jQuery</span>
+              <span class="tech-item">Bootstrap</span>
+              <span class="tech-item">Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="tech-category animate-fade-in" style="animation-delay: 0.3s;">
+            <h3>Мобилни Технологии</h3>
+            <div class="tech-list">
+              <span class="tech-item">React Native</span>
+              <span class="tech-item">Flutter</span>
+              <span class="tech-item">Swift</span>
+              <span class="tech-item">Kotlin</span>
+              <span class="tech-item">Xamarin</span>
+              <span class="tech-item">Ionic</span>
+            </div>
+          </div>
+          <div class="tech-category animate-fade-in" style="animation-delay: 0.4s;">
+            <h3>Бази Данни</h3>
+            <div class="tech-list">
+              <span class="tech-item">MySQL</span>
+              <span class="tech-item">PostgreSQL</span>
+              <span class="tech-item">MongoDB</span>
+              <span class="tech-item">Oracle</span>
+              <span class="tech-item">SQL Server</span>
+              <span class="tech-item">Firebase</span>
+              <span class="tech-item">Redis</span>
+            </div>
+          </div>
+          <div class="tech-category animate-fade-in" style="animation-delay: 0.5s;">
+            <h3>Cloud & DevOps</h3>
+            <div class="tech-list">
+              <span class="tech-item">AWS</span>
+              <span class="tech-item">Azure</span>
+              <span class="tech-item">Google Cloud</span>
+              <span class="tech-item">Docker</span>
+              <span class="tech-item">Kubernetes</span>
+              <span class="tech-item">Git</span>
+              <span class="tech-item">CI/CD</span>
+              <span class="tech-item">Jenkins</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose">
+      <div class="why-choose-container">
+        <h2 class="section-title">Защо да изберете SEPANG TECH GROUP?</h2>
+        <p class="section-subtitle">Ние сме повече от софтуерна компания - ние сме ваш партньор за дигитално бъдеще</p>
+        <div class="why-choose-grid">
+          <div class="why-choose-item animate-fade-in" style="animation-delay: 0.1s;">
+            <h3>🎯 Качество</h3>
+            <p>Високото качество на софтуерните решения е наш ТОП приоритет. Всички наши продукти преминават през строги тестове за гарантиране на надеждност и производителност.</p>
+          </div>
+          <div class="why-choose-item animate-fade-in" style="animation-delay: 0.2s;">
+            <h3>💡 Иновация</h3>
+            <p>Стремим се да разработваме иновативни решения, които максимално да удовлетворяват изискванията на клиента. Използваме най-новите технологии и подходи.</p>
+          </div>
+          <div class="why-choose-item animate-fade-in" style="animation-delay: 0.3s;">
+            <h3>🤝 Партньорство</h3>
+            <p>Партньорството с нашите клиенти е основата за успеха на всеки софтуерен продукт. За нас клиентите са партньори, а не просто клиенти.</p>
+          </div>
+          <div class="why-choose-item animate-fade-in" style="animation-delay: 0.4s;">
+            <h3>⚡ Бързо изпълнение</h3>
+            <p>Гарантираме бързо и качествено изпълнение на всички проекти. Работим ефективно без да компромитираме качеството.</p>
+          </div>
+          <div class="why-choose-item animate-fade-in" style="animation-delay: 0.5s;">
+            <h3>🔒 Сигурност</h3>
+            <p>Сигурността на данните ви е от изключителна важност за нас. Прилагаме най-добрите практики за защита на информацията.</p>
+          </div>
+          <div class="why-choose-item animate-fade-in" style="animation-delay: 0.6s;">
+            <h3>💰 Конкурентни цени</h3>
+            <p>Предлагаме конкурентни цени за висококачествени услуги. Вярваме, че професионалните ИТ решения трябва да бъдат достъпни за всеки бизнес.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients">
+      <div class="clients-container">
+        <h2 class="section-title">Сектори и типове проекти</h2>
+        <p class="section-subtitle">Решенията могат да бъдат адаптирани към различни бизнес модели и организации</p>
+        <div class="clients-grid">
+          <div class="client-card animate-fade-in" style="animation-delay: 0.1s;">
+            <div class="client-logo">🏛️ Държавни Институции</div>
+          </div>
+          <div class="client-card animate-fade-in" style="animation-delay: 0.2s;">
+            <div class="client-logo">🏥 Здравни Осигурители</div>
+          </div>
+          <div class="client-card animate-fade-in" style="animation-delay: 0.3s;">
+            <div class="client-logo">🏢 Корпоративни Клиенти</div>
+          </div>
+          <div class="client-card animate-fade-in" style="animation-delay: 0.4s;">
+            <div class="client-logo">📦 Логистика</div>
+          </div>
+          <div class="client-card animate-fade-in" style="animation-delay: 0.5s;">
+            <div class="client-logo">🏪 Търговски Вериги</div>
+          </div>
+          <div class="client-card animate-fade-in" style="animation-delay: 0.6s;">
+            <div class="client-logo">🏦 Финансови Учреждения</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="contact-container">
+        <div class="contact-info animate-fade-in">
+          <h2>Свържете се с нас</h2>
+          <p>Готови сме да отговорим на всички ваши въпроси и да обсъдим как можем да ви помогнем с ИТ нуждите на вашия бизнес.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div class="contact-text">
+                <h4>Адрес</h4>
+                <p>България</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">🌐</div>
+              <div class="contact-text">
+                <h4>Уеб услуги</h4>
+                <p>Сайтове, магазини и софтуер</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">✉️</div>
+              <div class="contact-text">
+                <h4>Имейл</h4>
+                <p><a href="mailto:sepanggroupltd@gmail.com">sepanggroupltd@gmail.com</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">🏢</div>
+              <div class="contact-text">
+                <h4>ЕИК</h4>
+                <p>203193777</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form animate-fade-in" style="animation-delay: 0.2s;">
+          <h3>Изпратете ни съобщение</h3>
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Име</label>
+              <input type="text" id="name" name="name" required placeholder="Вашето име" />
+            </div>
+            <div class="form-group">
+              <label for="email">Имейл</label>
+              <input type="email" id="email" name="email" required placeholder="Вашият имейл" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Телефон</label>
+              <input type="tel" id="phone" name="phone" placeholder="Вашият телефон" />
+            </div>
+            <div class="form-group">
+              <label for="subject">Тема</label>
+              <input type="text" id="subject" name="subject" required placeholder="Тема на съобщението" />
+            </div>
+            <div class="form-group">
+              <label for="message">Съобщение</label>
+              <textarea id="message" name="message" required placeholder="Вашето съобщение..."></textarea>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn">Изпрати съобщение</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-column animate-fade-in">
+            <h4>SEPANG TECH GROUP</h4>
+            <p>Професионални ИТ решения за вашия бизнес. Разработка на софтуер, уеб сайтове и мобилни приложения.</p>
+          </div>
+          <div class="footer-column animate-fade-in" style="animation-delay: 0.1s;">
+            <h4>Бързи връзки</h4>
+            <ul>
+              <li><a href="#hero">Начало</a></li>
+              <li><a href="#services">Услуги</a></li>
+              <li><a href="#about">За нас</a></li>
+              <li><a href="#technologies">Технологии</a></li>
+              <li><a href="#clients">Клиенти</a></li>
+              <li><a href="#contact">Контакт</a></li>
+            </ul>
+          </div>
+          <div class="footer-column animate-fade-in" style="animation-delay: 0.2s;">
+            <h4>Услуги</h4>
+            <ul>
+              <li><a href="#services">Разработка на софтуер</a></li>
+              <li><a href="#services">Уеб сайтове</a></li>
+              <li><a href="#services">Онлайн магазини</a></li>
+              <li><a href="#services">Мобилни приложения</a></li>
+              <li><a href="#services">IoT решения</a></li>
+              <li><a href="#services">ИТ консултации</a></li>
+            </ul>
+          </div>
+          <div class="footer-column animate-fade-in" style="animation-delay: 0.3s;">
+            <h4>Контакт</h4>
+            <ul>
+              <li>📍 България</li>
+              <li>✉️ <a href="mailto:sepanggroupltd@gmail.com">sepanggroupltd@gmail.com</a></li>
+              <li>🏢 ЕИК: 203193777</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom animate-fade-in" style="animation-delay: 0.4s;">
+          <p>© 2026 SEPANG TECH GROUP ЕООД. Всички права запазени.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+
+      const mobileMenuButton = document.querySelector('.mobile-menu-button');
+      const mainNav = document.querySelector('header nav');
+      mobileMenuButton?.addEventListener('click', () => {
+        const open = mainNav.classList.toggle('open');
+        mobileMenuButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      mainNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mainNav.classList.remove('open')));
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Contact form — works on any static web server by opening the visitor's mail client.
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = this.elements.name.value.trim();
+        const email = this.elements.email.value.trim();
+        const phone = this.elements.phone.value.trim();
+        const subject = this.elements.subject.value.trim();
+        const message = this.elements.message.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!name || !email || !subject || !message) { alert('Моля попълнете всички задължителни полета.'); return; }
+        if (!emailRegex.test(email)) { alert('Моля въведете валиден имейл адрес.'); return; }
+        const body = `Име: ${name}\nE-mail: ${email}\nТелефон: ${phone || 'Не е посочен'}\n\nСъобщение:\n${message}`;
+        window.location.href = `mailto:sepanggroupltd@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      });
+
+      // Animate elements on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with animation classes
+      document.querySelectorAll('.service-card, .tech-category, .why-choose-item, .client-card, .contact-item, .footer-column').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Add loaded class to body for initial animations
+      document.body.classList.add('loaded');
+    </script>
+  </body>
+</html>
