@@ -1,1609 +1,372 @@
 <!doctype html>
 <html lang="bg">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="SEPANG TECH GROUP ЕООД - Професионални уеб услуги, разработка на софтуер по поръчка, уеб сайтове, онлайн магазини и ИТ консултации за бизнеса ви." />
-    <meta name="keywords" content="уеб услуги, уеб сайт, онлайн магазин, софтуер по поръчка, SEO, уеб приложения, SEPANG TECH GROUP">
-    <title>SEPANG TECH GROUP | Уеб услуги и дигитални решения</title>
-    <meta property="og:title" content="SEPANG TECH GROUP | Уеб услуги и дигитални решения">
-    <meta property="og:description" content="Уеб сайтове, онлайн магазини, софтуер по поръчка, SEO и дигитални решения.">
-    <meta property="og:type" content="website">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"СЕПАНГ ГРУП ЕООД","alternateName":"SEPANG TECH GROUP","email":"sepanggroupltd@gmail.com"}</script>
-    <style>
-      :root {
-        --primary-color: #2563eb;
-        --secondary-color: #1e40af;
-        --accent-color: #0ea5e9;
-        --light-color: #f8fafc;
-        --dark-color: #1e293b;
-        --gray-color: #64748b;
-        --success-color: #10b981;
-        --warning-color: #f59e0b;
-        --danger-color: #ef4444;
-        --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        --font-secondary: 'JetBrains Mono', monospace;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: var(--font-primary);
-        line-height: 1.6;
-        color: var(--dark-color);
-        background-color: var(--light-color);
-      }
-
-      /* Header Styles */
-      header {
-        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-        color: white;
-        padding: 1rem 0;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .header-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .logo-icon {
-        width: 50px;
-        height: 50px;
-        background: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        color: var(--primary-color);
-        font-size: 1.2rem;
-      }
-
-      .logo-text {
-        font-size: 1.5rem;
-        font-weight: bold;
-      }
-
-      .logo-subtitle {
-        font-size: 0.8rem;
-        opacity: 0.9;
-      }
-
-      nav ul {
-        display: flex;
-        list-style: none;
-        gap: 2rem;
-      }
-
-      nav a {
-        color: white;
-        text-decoration: none;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        position: relative;
-      }
-
-      nav a:hover {
-        color: var(--accent-color);
-      }
-
-      nav a::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: var(--accent-color);
-        transition: width 0.3s ease;
-      }
-
-      nav a:hover::after {
-        width: 100%;
-      }
-
-      .cta-button {
-        background: white;
-        color: var(--primary-color);
-        padding: 0.5rem 1.5rem;
-        border-radius: 25px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        border: 2px solid white;
-      }
-
-      .cta-button:hover {
-        background: transparent;
-        color: white;
-      }
-
-      /* Hero Section */
-      .hero {
-        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-        color: white;
-        padding: 4rem 0;
-        text-align: center;
-      }
-
-      .hero-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-      }
-
-      .hero h1 {
-        font-size: 3rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-      }
-
-      .hero p {
-        font-size: 1.2rem;
-        max-width: 800px;
-        margin: 0 auto 2rem;
-        opacity: 0.95;
-      }
-
-      .hero-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .btn {
-        padding: 0.8rem 2rem;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        border: none;
-        cursor: pointer;
-        font-size: 1rem;
-      }
-
-      .btn-primary {
-        background: white;
-        color: var(--primary-color);
-        border: 2px solid white;
-      }
-
-      .btn-primary:hover {
-        background: transparent;
-        color: white;
-      }
-
-      .btn-secondary {
-        background: rgba(255, 255, 255, 0.2);
-        color: white;
-        border: 2px solid rgba(255, 255, 255, 0.5);
-      }
-
-      .btn-secondary:hover {
-        background: rgba(255, 255, 255, 0.3);
-      }
-
-      /* Services Section */
-      .services {
-        padding: 4rem 0;
-        background: var(--light-color);
-      }
-
-      .services-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-      }
-
-      .section-title {
-        text-align: center;
-        font-size: 2.5rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-        color: var(--dark-color);
-      }
-
-      .section-subtitle {
-        text-align: center;
-        font-size: 1.1rem;
-        color: var(--gray-color);
-        max-width: 800px;
-        margin: 0 auto 3rem;
-      }
-
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-      }
-
-      .service-card {
-        background: white;
-        border-radius: 10px;
-        padding: 2rem;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-        text-align: center;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-      }
-
-      .service-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-      }
-
-      .service-icon {
-        width: 80px;
-        height: 80px;
-        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1.5rem;
-        font-size: 2rem;
-        color: white;
-      }
-
-      .service-card h3 {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-        color: var(--dark-color);
-      }
-
-      .service-card p {
-        color: var(--gray-color);
-        margin-bottom: 1.5rem;
-      }
-
-      .service-card .btn {
-        background: var(--primary-color);
-        color: white;
-        border: 2px solid var(--primary-color);
-      }
-
-      .service-card .btn:hover {
-        background: var(--secondary-color);
-        border-color: var(--secondary-color);
-      }
-
-      /* About Section */
-      .about {
-        padding: 4rem 0;
-        background: white;
-      }
-
-      .about-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-        align-items: center;
-      }
-
-      .about-image {
-        width: 100%;
-        height: 400px;
-        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-        border-radius: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 2rem;
-      }
-
-      .about-content h2 {
-        font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-        color: var(--dark-color);
-      }
-
-      .about-content p {
-        color: var(--gray-color);
-        margin-bottom: 1.5rem;
-      }
-
-      .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-        margin-top: 2rem;
-      }
-
-      .stat-item {
-        text-align: center;
-        padding: 1.5rem;
-        background: var(--light-color);
-        border-radius: 10px;
-      }
-
-      .stat-number {
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: var(--primary-color);
-        margin-bottom: 0.5rem;
-      }
-
-      .stat-label {
-        font-size: 0.9rem;
-        color: var(--gray-color);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-
-      /* Technology Section */
-      .technologies {
-        padding: 4rem 0;
-        background: var(--light-color);
-      }
-
-      .technologies-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-        text-align: center;
-      }
-
-      .tech-categories {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-      }
-
-      .tech-category {
-        background: white;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .tech-category h3 {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-        color: var(--dark-color);
-        border-bottom: 2px solid var(--primary-color);
-        padding-bottom: 0.5rem;
-      }
-
-      .tech-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: center;
-      }
-
-      .tech-item {
-        background: var(--light-color);
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        color: var(--dark-color);
-        font-weight: 500;
-      }
-
-      /* Clients Section */
-      .clients {
-        padding: 4rem 0;
-        background: white;
-      }
-
-      .clients-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-        text-align: center;
-      }
-
-      .clients-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
-      }
-
-      .client-card {
-        background: var(--light-color);
-        padding: 2rem;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 150px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-      }
-
-      .client-card:hover {
-        background: white;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      }
-
-      .client-logo {
-        max-width: 150px;
-        opacity: 0.7;
-        transition: opacity 0.3s ease;
-      }
-
-      .client-card:hover .client-logo {
-        opacity: 1;
-      }
-
-      /* Why Choose Us Section */
-      .why-choose {
-        padding: 4rem 0;
-        background: var(--light-color);
-      }
-
-      .why-choose-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-      }
-
-      .why-choose-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
-      }
-
-      .why-choose-item {
-        background: white;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .why-choose-item h3 {
-        font-size: 1.3rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-        color: var(--dark-color);
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .why-choose-item p {
-        color: var(--gray-color);
-        line-height: 1.7;
-      }
-
-      /* Contact Section */
-      .contact {
-        padding: 4rem 0;
-        background: white;
-      }
-
-      .contact-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-      }
-
-      .contact-info h2 {
-        font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-        color: var(--dark-color);
-      }
-
-      .contact-info p {
-        color: var(--gray-color);
-        margin-bottom: 2rem;
-      }
-
-      .contact-details {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-
-      .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      .contact-icon {
-        width: 50px;
-        height: 50px;
-        background: var(--primary-color);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 1.2rem;
-      }
-
-      .contact-text h4 {
-        font-weight: bold;
-        color: var(--dark-color);
-        margin-bottom: 0.25rem;
-      }
-
-      .contact-text p {
-        color: var(--gray-color);
-        margin: 0;
-      }
-
-      .contact-form {
-        background: var(--light-color);
-        padding: 2rem;
-        border-radius: 10px;
-      }
-
-      .form-group {
-        margin-bottom: 1.5rem;
-      }
-
-      .form-group label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: 500;
-        color: var(--dark-color);
-      }
-
-      .form-group input,
-      .form-group textarea {
-        width: 100%;
-        padding: 0.8rem;
-        border: 1px solid rgba(0, 0, 0, 0.2);
-        border-radius: 5px;
-        font-size: 1rem;
-        transition: border-color 0.3s ease;
-      }
-
-      .form-group input:focus,
-      .form-group textarea:focus {
-        outline: none;
-        border-color: var(--primary-color);
-      }
-
-      .form-group textarea {
-        min-height: 150px;
-        resize: vertical;
-      }
-
-      .form-group .btn {
-        background: var(--primary-color);
-        color: white;
-        border: 2px solid var(--primary-color);
-        width: 100%;
-      }
-
-      .form-group .btn:hover {
-        background: var(--secondary-color);
-        border-color: var(--secondary-color);
-      }
-
-      /* Footer */
-      footer {
-        background: var(--dark-color);
-        color: white;
-        padding: 3rem 0 1rem;
-      }
-
-      .footer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-      }
-
-      .footer-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-bottom: 2rem;
-      }
-
-      .footer-column h4 {
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-        color: white;
-      }
-
-      .footer-column ul {
-        list-style: none;
-      }
-
-      .footer-column li {
-        margin-bottom: 0.5rem;
-      }
-
-      .footer-column a {
-        color: rgba(255, 255, 255, 0.8);
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      .footer-column a:hover {
-        color: var(--accent-color);
-      }
-
-      .footer-bottom {
-        text-align: center;
-        padding-top: 2rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 0.9rem;
-      }
-
-      .social-links {
-        display: flex;
-        gap: 1rem;
-        margin-top: 1rem;
-      }
-
-      .social-link {
-        width: 40px;
-        height: 40px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        text-decoration: none;
-        transition: all 0.3s ease;
-      }
-
-      .social-link:hover {
-        background: var(--primary-color);
-        transform: translateY(-3px);
-      }
-
-      /* Responsive Design */
-
-      /* Payment Methods Section */
-      .payments {
-        padding: 4rem 0;
-        background: #fff;
-      }
-
-      .payments .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-      }
-
-      .payments-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 1.25rem;
-      }
-
-      .payment-card {
-        background: #f8fafc;
-        border: 1px solid rgba(37, 99, 235, 0.12);
-        border-radius: 14px;
-        padding: 1.5rem;
-        text-align: center;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-      }
-
-      .payment-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.09);
-      }
-
-      .payment-icon {
-        width: 64px;
-        height: 64px;
-        margin: 0 auto 1rem;
-        border-radius: 14px;
-        background: #fff;
-        border: 1px solid #e2e8f0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.7rem;
-      }
-
-      .payment-card h3 {
-        margin: 0 0 0.5rem;
-        color: var(--dark-color);
-        font-size: 1.1rem;
-      }
-
-      .payment-card p {
-        margin: 0;
-        color: var(--gray-color);
-        font-size: 0.9rem;
-        line-height: 1.55;
-      }
-
-      .payment-note {
-        margin-top: 2rem;
-        padding: 1.15rem 1.25rem;
-        background: #eff6ff;
-        border: 1px solid #bfdbfe;
-        border-radius: 10px;
-        color: #334155;
-        text-align: center;
-      }
-
-      .payment-note strong {
-        color: var(--dark-color);
-      }
-
-      @media (max-width: 900px) {
-        .payments-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-
-      @media (max-width: 600px) {
-        .payments-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      /* Pricing Section */
-      .pricing {
-        padding: 4rem 0;
-        background: var(--light-color);
-      }
-
-      .pricing .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-      }
-
-      .section-header {
-        text-align: center;
-        margin-bottom: 3rem;
-      }
-
-      .section-header h2 {
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: var(--dark-color);
-        margin-bottom: 0.75rem;
-      }
-
-      .section-header p {
-        color: var(--gray-color);
-        font-size: 1.1rem;
-      }
-
-      .pricing-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1.5rem;
-      }
-
-      .pricing-card {
-        background: #fff;
-        border: 1px solid rgba(37, 99, 235, 0.12);
-        border-radius: 14px;
-        padding: 2rem;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        display: flex;
-        flex-direction: column;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-      }
-
-      .pricing-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
-      }
-
-      .pricing-icon {
-        width: 58px;
-        height: 58px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.55rem;
-        margin-bottom: 1rem;
-      }
-
-      .pricing-card h3 {
-        font-size: 1.35rem;
-        color: var(--dark-color);
-        margin-bottom: 0.5rem;
-      }
-
-      .price {
-        color: var(--primary-color);
-        font-size: 2rem;
-        line-height: 1.15;
-        font-weight: 800;
-        margin-top: 0.25rem;
-      }
-
-      .price span {
-        font-size: 0.95rem;
-        font-weight: 600;
-        color: var(--gray-color);
-      }
-
-      .price-note {
-        color: var(--gray-color);
-        font-size: 0.9rem;
-        margin: 0.35rem 0 1.25rem;
-      }
-
-      .pricing-card ul {
-        list-style: none;
-        margin: 0 0 1.5rem;
-        padding: 0;
-        flex: 1;
-      }
-
-      .pricing-card li {
-        position: relative;
-        padding: 0.48rem 0 0.48rem 1.35rem;
-        color: var(--gray-color);
-        font-size: 0.95rem;
-        border-bottom: 1px solid rgba(100, 116, 139, 0.12);
-      }
-
-      .pricing-card li:last-child {
-        border-bottom: 0;
-      }
-
-      .pricing-card li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        top: 0.48rem;
-        color: var(--success-color);
-        font-weight: 800;
-      }
-
-      .pricing-card .btn {
-        display: inline-block;
-        text-align: center;
-        background: var(--primary-color);
-        color: #fff;
-        border: 2px solid var(--primary-color);
-        width: 100%;
-      }
-
-      .pricing-card .btn:hover {
-        background: var(--secondary-color);
-        border-color: var(--secondary-color);
-      }
-
-      .pricing-note-box {
-        margin-top: 2rem;
-        padding: 1.1rem 1.25rem;
-        background: #fff;
-        border-left: 4px solid var(--primary-color);
-        border-radius: 8px;
-        color: var(--gray-color);
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
-      }
-
-      .pricing-note-box strong {
-        color: var(--dark-color);
-      }
-
-      @media (max-width: 768px) {
-        .header-container {
-          flex-direction: column;
-          gap: 1rem;
-        }
-
-        nav ul {
-          flex-direction: column;
-          gap: 1rem;
-          text-align: center;
-        }
-
-        .hero h1 {
-          font-size: 2rem;
-        }
-
-        .hero p {
-          font-size: 1rem;
-        }
-
-        .about-container {
-          grid-template-columns: 1fr;
-        }
-
-        .contact-container {
-          grid-template-columns: 1fr;
-        }
-
-        .stats-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .hero-buttons {
-          flex-direction: column;
-          align-items: center;
-        }
-      }
-
-      /* Animations */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .animate-fade-in {
-        animation: fadeIn 0.6s ease-out forwards;
-      }
-
-      /* Utility Classes */
-      .text-center {
-        text-align: center;
-      }
-
-      .mt-1 { margin-top: 0.5rem; }
-      .mt-2 { margin-top: 1rem; }
-      .mt-3 { margin-top: 1.5rem; }
-      .mt-4 { margin-top: 2rem; }
-
-      .mb-1 { margin-bottom: 0.5rem; }
-      .mb-2 { margin-bottom: 1rem; }
-      .mb-3 { margin-bottom: 1.5rem; }
-      .mb-4 { margin-bottom: 2rem; }
-
-      .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-      .py-3 { padding-top: 1rem; padding-bottom: 1rem; }
-
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-      }
-    
-      .mobile-menu-button{display:none;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:8px;padding:.55rem .75rem;font-size:1.1rem;cursor:pointer}
-      @media (max-width: 1100px){.pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-      @media (max-width: 900px){
-        header{padding:.75rem 0}.header-container{flex-direction:row!important;gap:0}.mobile-menu-button{display:block}header nav{display:none;position:absolute;left:0;right:0;top:74px;background:#12327f;padding:1rem;box-shadow:0 15px 30px rgba(0,0,0,.2)}header nav.open{display:block}header nav ul{flex-direction:column;gap:.8rem!important;margin:0;padding:0;text-align:center}header nav a{display:block;padding:.45rem}.cta-button{display:none}.logo-text{font-size:1.05rem}.logo-icon{width:42px;height:42px}.hero{padding:5rem 0 4rem}.hero h1{font-size:clamp(2.2rem,9vw,4rem)}.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tech-categories{grid-template-columns:repeat(2,minmax(0,1fr))}.why-choose-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-      @media (max-width: 600px){.services-grid,.tech-categories,.why-choose-grid,.pricing-grid{grid-template-columns:1fr}.hero-buttons .btn{width:100%}.section-title{font-size:2rem}.about-image{height:260px}.footer-grid{grid-template-columns:1fr}.contact-form{padding:1.25rem}}
-</style>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <div class="header-container">
-        <div class="logo">
-          <div class="logo-icon">ST</div>
-          <div>
-            <div class="logo-text">SEPANG TECH GROUP</div>
-            <div class="logo-subtitle">ЕООД</div>
-          </div>
-        </div>
-        <button class="mobile-menu-button" aria-label="Отвори меню" aria-expanded="false">☰</button>
-        <nav>
-          <ul>
-            <li><a href="#hero">Начало</a></li>
-            <li><a href="#services">Услуги</a></li>
-            <li><a href="#pricing">Цени</a></li>
-            <li><a href="#payments">Плащане</a></li>
-            <li><a href="#about">За нас</a></li>
-            <li><a href="#technologies">Технологии</a></li>
-            <li><a href="#clients">Клиенти</a></li>
-            <li><a href="#contact">Контакт</a></li>
-          </ul>
-        </nav>
-        <a href="#contact" class="cta-button">Свържете се</a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SEPANG TECH GROUP ЕООД — професионални уеб сайтове, онлайн магазини, софтуер по поръчка, мобилни приложения, SEO и ИТ консултации.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="SEPANG TECH GROUP ЕООД">
+  <meta name="theme-color" content="#2563eb">
+  <meta property="og:title" content="SEPANG TECH GROUP | Уеб услуги и дигитални решения">
+  <meta property="og:description" content="Уеб сайтове, онлайн магазини, софтуер по поръчка, мобилни приложения, SEO и ИТ решения.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="bg_BG">
+  <title>SEPANG TECH GROUP | Уеб услуги и дигитални решения</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"СЕПАНГ ГРУП ЕООД",
+    "alternateName":"SEPANG TECH GROUP",
+    "email":"sepanggroupltd@gmail.com",
+    "identifier":{"@type":"PropertyValue","propertyID":"ЕИК","value":"203193777"},
+    "areaServed":"BG"
+  }
+  </script>
+
+  <style>
+    :root{
+      --primary:#2563eb;--secondary:#1e40af;--accent:#0ea5e9;
+      --light:#f8fafc;--dark:#0f172a;--text:#334155;--muted:#64748b;
+      --success:#10b981;--border:#e2e8f0;--white:#fff;
+      --radius:16px;--shadow:0 10px 30px rgba(15,23,42,.08);
+      --font:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{font-family:var(--font);line-height:1.6;color:var(--text);background:var(--light)}
+    a{color:inherit} button,input,textarea{font:inherit}
+    .container{width:min(1200px,calc(100% - 32px));margin:auto}
+    .section{padding:88px 0}
+    .section.alt{background:#fff}
+    .section-title{text-align:center;font-size:clamp(2rem,4vw,2.7rem);line-height:1.15;color:var(--dark);margin-bottom:14px}
+    .section-subtitle{max-width:800px;margin:0 auto 44px;text-align:center;color:var(--muted);font-size:1.05rem}
+    .section-header{text-align:center;margin-bottom:44px}
+    .section-header h2{font-size:clamp(2rem,4vw,2.7rem);color:var(--dark);margin-bottom:10px}
+    .section-header p{color:var(--muted);font-size:1.05rem}
+    header{position:sticky;top:0;z-index:1000;background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 4px 18px rgba(15,23,42,.15)}
+    .header-container{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{display:flex;align-items:center;gap:10px;min-width:max-content}
+    .logo-icon{width:44px;height:44px;border-radius:50%;background:#fff;color:var(--primary);display:grid;place-items:center;font-weight:800}
+    .logo-text{font-size:1.1rem;font-weight:800;letter-spacing:.2px}
+    .logo-subtitle{font-size:.72rem;opacity:.85}
+    nav ul{display:flex;align-items:center;gap:18px;list-style:none}
+    nav a{color:#fff;text-decoration:none;font-size:.9rem;font-weight:600;position:relative;padding:8px 0}
+    nav a:after{content:"";position:absolute;left:0;bottom:2px;width:0;height:2px;background:#fff;transition:.2s}
+    nav a:hover:after{width:100%}
+    .cta-button,.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:12px 20px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:.2s}
+    .cta-button{background:#fff;color:var(--primary)}
+    .cta-button:hover{background:transparent;color:#fff;border-color:#fff}
+    .btn-primary{background:#fff;color:var(--primary);border-color:#fff}
+    .btn-primary:hover{background:transparent;color:#fff}
+    .btn-secondary{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.45)}
+    .btn-secondary:hover{background:rgba(255,255,255,.22)}
+    .mobile-menu-button{display:none;background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:9px;padding:8px 11px;cursor:pointer}
+    .hero{background:radial-gradient(circle at 80% 20%,rgba(14,165,233,.3),transparent 30%),linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;padding:110px 0 95px}
+    .hero-content{text-align:center;max-width:900px;margin:auto}
+    .hero h1{font-size:clamp(2.4rem,7vw,4.5rem);line-height:1.05;margin-bottom:22px;letter-spacing:-1.5px}
+    .hero p{font-size:clamp(1rem,2vw,1.2rem);max-width:820px;margin:0 auto 30px;opacity:.95}
+    .hero-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+    .grid{display:grid;gap:22px}
+    .services-grid{grid-template-columns:repeat(3,1fr)}
+    .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);transition:.25s}
+    .card:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(15,23,42,.12)}
+    .service-icon,.pricing-icon{width:62px;height:62px;border-radius:16px;background:linear-gradient(135deg,var(--primary),var(--accent));display:grid;place-items:center;font-size:1.7rem;color:#fff;margin-bottom:18px}
+    .card h3{color:var(--dark);margin-bottom:10px;font-size:1.3rem}
+    .card p{color:var(--muted);margin-bottom:20px}
+    .service-card .btn,.pricing-card .btn{background:var(--primary);color:#fff;width:100%}
+    .service-card .btn:hover,.pricing-card .btn:hover{background:var(--secondary)}
+    .about-grid,.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+    .about-image{min-height:390px;border-radius:22px;background:linear-gradient(135deg,var(--primary),var(--accent));display:grid;place-items:center;color:#fff;font-size:2rem;font-weight:800;text-align:center;padding:30px;box-shadow:var(--shadow)}
+    .about-content h2{font-size:2rem;color:var(--dark);margin-bottom:16px}
+    .about-content p{margin-bottom:18px}
+    .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
+    .stat{background:var(--light);border-radius:12px;padding:18px;text-align:center}
+    .stat strong{display:block;font-size:1.8rem;color:var(--primary)}
+    .stat span{font-size:.78rem;text-transform:uppercase;color:var(--muted)}
+    .tech-grid{grid-template-columns:repeat(2,1fr)}
+    .tech-list{display:flex;flex-wrap:wrap;gap:9px}
+    .tech-item{background:var(--light);border:1px solid var(--border);border-radius:999px;padding:7px 12px;font-size:.88rem;font-weight:600;color:var(--dark)}
+    .why-grid{grid-template-columns:repeat(3,1fr)}
+    .clients-grid{grid-template-columns:repeat(3,1fr)}
+    .sector{min-height:120px;display:grid;place-items:center;text-align:center;font-weight:700;color:var(--dark)}
+    .pricing-grid{grid-template-columns:repeat(3,1fr)}
+    .pricing-card{display:flex;flex-direction:column}
+    .price{font-size:2rem;font-weight:800;color:var(--primary);line-height:1.2}
+    .price span{font-size:.9rem;color:var(--muted)}
+    .price-note{font-size:.85rem;color:var(--muted);margin:5px 0 16px}
+    .pricing-card ul{list-style:none;margin:0 0 22px;flex:1}
+    .pricing-card li{padding:8px 0 8px 23px;border-bottom:1px solid #eef2f7;position:relative}
+    .pricing-card li:before{content:"✓";position:absolute;left:0;color:var(--success);font-weight:800}
+    .note{margin-top:28px;padding:18px 20px;background:#eff6ff;border-left:4px solid var(--primary);border-radius:10px;color:var(--text)}
+    .payments-grid{grid-template-columns:repeat(4,1fr)}
+    .payment-card{text-align:center}
+    .payment-icon{width:58px;height:58px;margin:0 auto 14px;border-radius:14px;background:var(--light);display:grid;place-items:center;font-size:1.5rem}
+    .payment-status{display:inline-block;margin-top:12px;font-size:.76rem;font-weight:700;color:var(--primary);background:#eff6ff;padding:5px 9px;border-radius:999px}
+    .contact-info h2{font-size:2rem;color:var(--dark);margin-bottom:12px}
+    .contact-details{display:grid;gap:16px;margin-top:24px}
+    .contact-item{display:flex;gap:14px;align-items:flex-start}
+    .contact-icon{width:46px;height:46px;flex:0 0 46px;border-radius:50%;background:var(--primary);color:#fff;display:grid;place-items:center}
+    .contact-text h4{color:var(--dark);margin-bottom:2px}
+    .contact-text a{color:var(--primary);text-decoration:none}
+    .contact-form{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+    .contact-form h3{color:var(--dark);margin-bottom:20px;font-size:1.4rem}
+    .form-group{margin-bottom:16px}
+    label{display:block;font-weight:600;color:var(--dark);margin-bottom:6px}
+    input,textarea{width:100%;border:1px solid #cbd5e1;border-radius:9px;padding:12px 13px;background:#fff;color:var(--dark);outline:none}
+    input:focus,textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+    textarea{min-height:145px;resize:vertical}
+    .form-actions{display:grid;gap:10px}
+    .privacy-note{font-size:.78rem;color:var(--muted);text-align:center}
+    footer{background:var(--dark);color:#fff;padding:65px 0 20px}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px}
+    .footer-column h4{margin-bottom:14px}
+    .footer-column p,.footer-column li{color:#cbd5e1;font-size:.92rem}
+    .footer-column ul{list-style:none;display:grid;gap:7px}
+    .footer-column a{text-decoration:none;color:#cbd5e1}
+    .footer-column a:hover{color:#fff}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:35px;padding-top:18px;text-align:center;color:#94a3b8;font-size:.82rem}
+    .toast{position:fixed;right:20px;bottom:20px;max-width:360px;background:var(--dark);color:#fff;padding:15px 18px;border-radius:12px;box-shadow:0 15px 35px rgba(0,0,0,.2);opacity:0;pointer-events:none;transform:translateY(15px);transition:.25s;z-index:2000}
+    .toast.show{opacity:1;pointer-events:auto;transform:none}
+    @media(max-width:1000px){
+      nav{display:none}nav.open{display:block;position:absolute;left:0;right:0;top:76px;background:#173a91;padding:15px}.mobile-menu-button{display:block}
+      nav ul{flex-direction:column;align-items:stretch}.cta-button{display:none}
+      .services-grid,.why-grid,.pricing-grid{grid-template-columns:repeat(2,1fr)}
+      .payments-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:700px){
+      .section{padding:65px 0}.services-grid,.tech-grid,.why-grid,.clients-grid,.pricing-grid,.payments-grid,.about-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}
+      .about-image{min-height:260px}.stats-grid{grid-template-columns:1fr}.hero{padding:80px 0}.hero-buttons .btn{width:100%}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="container header-container">
+    <a class="logo" href="#hero" aria-label="SEPANG TECH GROUP — начало">
+      <span class="logo-icon">ST</span>
+      <span><span class="logo-text">SEPANG TECH GROUP</span><br><span class="logo-subtitle">СЕПАНГ ГРУП ЕООД</span></span>
+    </a>
+    <button class="mobile-menu-button" aria-label="Отвори меню" aria-expanded="false" aria-controls="mainNav">☰</button>
+    <nav id="mainNav" aria-label="Основна навигация">
+      <ul>
+        <li><a href="#hero">Начало</a></li><li><a href="#services">Услуги</a></li><li><a href="#pricing">Цени</a></li>
+        <li><a href="#payments">Плащане</a></li><li><a href="#about">За нас</a></li><li><a href="#technologies">Технологии</a></li>
+        <li><a href="#clients">Сектори</a></li><li><a href="#contact">Контакт</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="cta-button">Свържете се</a>
+  </div>
+</header>
+
+<main>
+<section id="hero" class="hero">
+  <div class="container hero-content">
+    <h1>Професионални УЕБ УСЛУГИ</h1>
+    <p>SEPANG TECH GROUP предлага цялостни ИТ и дигитални решения — от професионални уеб сайтове и онлайн магазини до софтуер по поръчка, мобилни приложения, SEO и технически консултации.</p>
+    <div class="hero-buttons">
+      <a href="#services" class="btn btn-primary">Вижте услугите</a>
+      <a href="#contact" class="btn btn-secondary">Изпратете запитване</a>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="container">
+    <h2 class="section-title">Нашите услуги</h2>
+    <p class="section-subtitle">Практични и мащабируеми дигитални решения, съобразени с конкретните цели на бизнеса.</p>
+    <div class="grid services-grid">
+      <article class="card service-card"><div class="service-icon">💻</div><h3>Софтуер по поръчка</h3><p>Персонализирани web приложения, системи, API интеграции и бизнес софтуер.</p><a href="#contact" class="btn">Запитване</a></article>
+      <article class="card service-card"><div class="service-icon">🌐</div><h3>Уеб сайтове</h3><p>Бързи, responsive и професионални сайтове с модерна структура и SEO основа.</p><a href="#contact" class="btn">Запитване</a></article>
+      <article class="card service-card"><div class="service-icon">🛒</div><h3>Онлайн магазини</h3><p>Електронна търговия с каталог, поръчки, плащания и куриерски интеграции.</p><a href="#contact" class="btn">Запитване</a></article>
+      <article class="card service-card"><div class="service-icon">📱</div><h3>Мобилни приложения</h3><p>Решения за iOS и Android с модерен интерфейс и връзка с необходимите услуги.</p><a href="#contact" class="btn">Запитване</a></article>
+      <article class="card service-card"><div class="service-icon">🔧</div><h3>IoT решения</h3><p>Интелигентни системи, устройства, мониторинг и автоматизация според проекта.</p><a href="#contact" class="btn">Запитване</a></article>
+      <article class="card service-card"><div class="service-icon">💡</div><h3>ИТ консултиране</h3><p>Технологичен анализ, избор на решения, планиране и дигитална стратегия.</p><a href="#contact" class="btn">Запитване</a></article>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="section alt">
+  <div class="container">
+    <div class="section-header"><h2>Ценоразпис</h2><p>Прозрачни начални цени в EUR за основните услуги.</p></div>
+    <div class="grid pricing-grid">
+      <article class="card pricing-card"><div class="pricing-icon">🏢</div><h3>Бизнес сайт</h3><div class="price">€761.84</div><p class="price-note">Начална цена</p><ul><li>Професионален дизайн</li><li>До 10 страници</li><li>Мобилна оптимизация</li><li>SEO основа</li><li>Контактна форма</li><li>Google интеграции</li></ul><a href="#contact" class="btn">Заяви оферта</a></article>
+      <article class="card pricing-card"><div class="pricing-icon">🛒</div><h3>Онлайн магазин</h3><div class="price">€1,274.04</div><p class="price-note">Начална цена</p><ul><li>Каталог с продукти</li><li>Количка и поръчки</li><li>Онлайн плащания</li><li>Еконт / Спиди интеграция</li><li>SEO оптимизация</li><li>Административен панел</li></ul><a href="#contact" class="btn">Заяви оферта</a></article>
+      <article class="card pricing-card"><div class="pricing-icon">⚙️</div><h3>Софтуер по поръчка</h3><div class="price">€2,551.04</div><p class="price-note">Начална цена</p><ul><li>Анализ на изискванията</li><li>Персонализирана архитектура</li><li>Web приложения</li><li>API и интеграции</li><li>Бази данни</li><li>Тестване и внедряване</li></ul><a href="#contact" class="btn">Заяви оферта</a></article>
+      <article class="card pricing-card"><div class="pricing-icon">📱</div><h3>Мобилно приложение</h3><div class="price">€2,039.03</div><p class="price-note">Начална цена</p><ul><li>iOS и Android</li><li>Модерен интерфейс</li><li>API интеграция</li><li>Push известия</li><li>Тестване</li><li>Публикуване</li></ul><a href="#contact" class="btn">Заяви оферта</a></article>
+      <article class="card pricing-card"><div class="pricing-icon">🔎</div><h3>SEO оптимизация</h3><div class="price">€199.40 <span>/мес.</span></div><p class="price-note">Начална цена</p><ul><li>SEO анализ</li><li>Ключови думи</li><li>On-page оптимизация</li><li>Техническо SEO</li><li>Месечен мониторинг</li><li>SEO препоръки</li></ul><a href="#contact" class="btn">Заяви оферта</a></article>
+      <article class="card pricing-card"><div class="pricing-icon">🔧</div><h3>Поддръжка</h3><div class="price">€50.62 <span>/мес.</span></div><p class="price-note">Начална цена</p><ul><li>Техническа поддръжка</li><li>Актуализации</li><li>Backup</li><li>Мониторинг</li><li>Консултация</li><li>Базова сигурност</li></ul><a href="#contact" class="btn">Заяви оферта</a></article>
+      <article class="card pricing-card"><div class="pricing-icon">👨‍💻</div><h3>ИТ консултиране</h3><div class="price">€40.90 <span>/час</span></div><p class="price-note">Начална цена</p><ul><li>ИТ консултации</li><li>Технологичен анализ</li><li>Планиране на проекти</li><li>Избор на технологии</li><li>Дигитална стратегия</li><li>Технически препоръки</li></ul><a href="#contact" class="btn">Заяви оферта</a></article>
+    </div>
+    <div class="note"><strong>Важно:</strong> Посочените цени са начални и ориентировъчни. Крайната цена се определя според функционалностите, дизайна, интеграциите, съдържанието и сроковете на проекта.</div>
+  </div>
+</section>
+
+<section id="payments" class="section">
+  <div class="container">
+    <div class="section-header"><h2>Начини на плащане</h2><p>Избираме подходящия начин на плащане според проекта и договорените условия.</p></div>
+    <div class="grid payments-grid">
+      <article class="card payment-card"><div class="payment-icon">💳</div><h3>Visa / Mastercard</h3><p>Картово плащане чрез активен и сигурен платежен оператор.</p><span class="payment-status">При активирана интеграция</span></article>
+      <article class="card payment-card"><div class="payment-icon">🅿️</div><h3>PayPal</h3><p>PayPal Checkout при наличен и конфигуриран PayPal Business профил.</p><span class="payment-status">При активирана интеграция</span></article>
+      <article class="card payment-card"><div class="payment-icon">🏦</div><h3>Банков превод</h3><p>Плащане по банков път въз основа на оферта или издадена фактура.</p><span class="payment-status">Договорен начин</span></article>
+      <article class="card payment-card"><div class="payment-icon">🧾</div><h3>Фактура</h3><p>Издаване на необходимите счетоводни документи за фирмено плащане.</p><span class="payment-status">При договорени условия</span></article>
+    </div>
+    <div class="note"><strong>Сигурност:</strong> Не въвеждайте данни за карта директно в този статичен сайт. Реалното картово/PayPal плащане трябва да преминава през платежния оператор. PayPal изисква създаване и потвърждаване на поръчката чрез сървърна интеграция; секретният ключ не трябва да се публикува в HTML.</div>
+  </div>
+</section>
+
+<section id="about" class="section alt">
+  <div class="container about-grid">
+    <div class="about-image">🏢<br>SEPANG TECH GROUP</div>
+    <div class="about-content">
+      <h2>За SEPANG TECH GROUP</h2>
+      <p>SEPANG TECH GROUP ЕООД е технологичен партньор за разработка на дигитални и ИТ решения за бизнес клиенти.</p>
+      <p>Подбираме технологиите според конкретните нужди на проекта и разработваме уеб приложения, софтуерни системи, онлайн магазини и мобилни решения с фокус върху качество, сигурност и практическа стойност.</p>
+      <div class="stats-grid"><div class="stat"><strong>01</strong><span>Партньор за проекта</span></div><div class="stat"><strong>∞</strong><span>Възможности за развитие</span></div><div class="stat"><strong>24/7</strong><span>Дигитална достъпност</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="technologies" class="section">
+  <div class="container">
+    <h2 class="section-title">Технологии, които използваме</h2>
+    <p class="section-subtitle">Технологичният стек се избира според изискванията, бюджета, сигурността и мащаба на проекта.</p>
+    <div class="grid tech-grid">
+      <article class="card"><h3>Back-End</h3><div class="tech-list"><span class="tech-item">Java</span><span class="tech-item">C#</span><span class="tech-item">.NET</span><span class="tech-item">PHP</span><span class="tech-item">Node.js</span><span class="tech-item">Python</span><span class="tech-item">Spring Boot</span><span class="tech-item">Django</span><span class="tech-item">Laravel</span></div></article>
+      <article class="card"><h3>Front-End</h3><div class="tech-list"><span class="tech-item">HTML5</span><span class="tech-item">CSS3</span><span class="tech-item">JavaScript</span><span class="tech-item">TypeScript</span><span class="tech-item">React</span><span class="tech-item">Angular</span><span class="tech-item">Vue.js</span><span class="tech-item">Bootstrap</span><span class="tech-item">Tailwind CSS</span></div></article>
+      <article class="card"><h3>Мобилни технологии</h3><div class="tech-list"><span class="tech-item">React Native</span><span class="tech-item">Flutter</span><span class="tech-item">Swift</span><span class="tech-item">Kotlin</span><span class="tech-item">Ionic</span></div></article>
+      <article class="card"><h3>Бази данни</h3><div class="tech-list"><span class="tech-item">MySQL</span><span class="tech-item">PostgreSQL</span><span class="tech-item">MongoDB</span><span class="tech-item">Oracle</span><span class="tech-item">SQL Server</span><span class="tech-item">Firebase</span><span class="tech-item">Redis</span></div></article>
+      <article class="card"><h3>Cloud & DevOps</h3><div class="tech-list"><span class="tech-item">AWS</span><span class="tech-item">Azure</span><span class="tech-item">Google Cloud</span><span class="tech-item">Docker</span><span class="tech-item">Kubernetes</span><span class="tech-item">Git</span><span class="tech-item">CI/CD</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2 class="section-title">Защо да изберете SEPANG TECH GROUP?</h2>
+    <p class="section-subtitle">Професионален подход от първоначалната идея до внедряването и поддръжката.</p>
+    <div class="grid why-grid">
+      <article class="card"><h3>🎯 Качество</h3><p>Фокус върху надеждност, производителност и ясни технически решения.</p></article>
+      <article class="card"><h3>💡 Иновация</h3><p>Използване на подходящи съвременни технологии според реалната задача.</p></article>
+      <article class="card"><h3>🤝 Партньорство</h3><p>Работим с клиента като партньор през целия жизнен цикъл на проекта.</p></article>
+      <article class="card"><h3>⚡ Ефективност</h3><p>Структуриран процес и ясни приоритети без ненужна сложност.</p></article>
+      <article class="card"><h3>🔒 Сигурност</h3><p>Сигурността и защитата на информацията са част от техническия подход.</p></article>
+      <article class="card"><h3>💰 Конкурентни цени</h3><p>Прозрачни начални цени и индивидуална оферта за конкретния обхват.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="clients" class="section">
+  <div class="container">
+    <h2 class="section-title">Сектори и типове проекти</h2>
+    <p class="section-subtitle">Решенията могат да бъдат адаптирани към различни бизнес модели и организации.</p>
+    <div class="grid clients-grid">
+      <div class="card sector">🏛️<br>Държавни институции</div><div class="card sector">🏥<br>Здравен сектор</div><div class="card sector">🏢<br>Корпоративни клиенти</div>
+      <div class="card sector">📦<br>Логистика</div><div class="card sector">🏪<br>Търговия</div><div class="card sector">🏦<br>Финансов сектор</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section alt">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <h2>Свържете се с нас</h2>
+      <p>Опишете накратко проекта, нуждите или проблема си. Ще получите обратна връзка и следващи стъпки за обсъждане на решението.</p>
+      <div class="contact-details">
+        <div class="contact-item"><div class="contact-icon">📍</div><div class="contact-text"><h4>Държава</h4><p>България</p></div></div>
+        <div class="contact-item"><div class="contact-icon">✉️</div><div class="contact-text"><h4>Имейл</h4><p><a href="mailto:sepanggroupltd@gmail.com">sepanggroupltd@gmail.com</a></p></div></div>
+        <div class="contact-item"><div class="contact-icon">🏢</div><div class="contact-text"><h4>ЕИК</h4><p>203193777</p></div></div>
       </div>
-    </header>
+    </div>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-      <div class="hero-container">
-        <h1 class="animate-fade-in">Професионални УЕБ УСЛУГИ</h1>
-        <p class="animate-fade-in" style="animation-delay: 0.2s;">SEPANG TECH GROUP ви предлага пълен спектър от ИТ решения за бизнеса ви - от разработка на софтуер по поръчка до създаване на уеб сайтове и онлайн магазини</p>
-        <div class="hero-buttons">
-          <a href="#services" class="btn btn-primary animate-fade-in" style="animation-delay: 0.4s;">Вижте услугите ни</a>
-          <a href="#contact" class="btn btn-secondary animate-fade-in" style="animation-delay: 0.6s;">Свържете се сега</a>
-        </div>
-      </div>
-    </section>
+    <div class="contact-form">
+      <h3>Изпратете ни съобщение</h3>
+      <form id="contactForm" novalidate>
+        <div class="form-group"><label for="name">Име *</label><input id="name" name="name" autocomplete="name" required placeholder="Вашето име"></div>
+        <div class="form-group"><label for="email">Имейл *</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="Вашият имейл"></div>
+        <div class="form-group"><label for="phone">Телефон</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Вашият телефон"></div>
+        <div class="form-group"><label for="subject">Тема *</label><input id="subject" name="subject" required placeholder="Тема на запитването"></div>
+        <div class="form-group"><label for="message">Съобщение *</label><textarea id="message" name="message" required placeholder="Опишете вашия проект или въпрос..."></textarea></div>
+        <div class="form-actions"><button class="btn" type="submit" style="background:var(--primary);color:#fff">Изпрати съобщение</button><p class="privacy-note">Формата отваря вашия имейл клиент. Данните не се изпращат към този статичен сайт.</p></div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-      <div class="services-container">
-        <h2 class="section-title">Нашите Услуги</h2>
-        <p class="section-subtitle">Предлагаме пълния спектър от ИТ услуги за вашия бизнес, основани на най-добрите световни практики и технологии</p>
-        <div class="services-grid">
-          <div class="service-card animate-fade-in" style="animation-delay: 0.1s;">
-            <div class="service-icon">💻</div>
-            <h3>Разработка на Софтуер по Поръчка</h3>
-            <p>Създаваме специализиран софтуер според вашите специфични бизнес изисквания и нужди. Решенията ни са скалваеми, сигурни и оптимизирани за вашия бизнес.</p>
-            <a href="#contact" class="btn">Запитване</a>
-          </div>
-          <div class="service-card animate-fade-in" style="animation-delay: 0.2s;">
-            <div class="service-icon">🌐</div>
-            <h3>Изработка на Уеб Сайтове</h3>
-            <p>Професионални уеб сайтове за представяне на вашия бизнес онлайн. Съвременен дизайн, бързо зареждане и оптимизация за търсачките машини.</p>
-            <a href="#contact" class="btn">Запитване</a>
-          </div>
-          <div class="service-card animate-fade-in" style="animation-delay: 0.3s;">
-            <div class="service-icon">🛒</div>
-            <h3>Онлайн Магазини</h3>
-            <p>Пълно функционални онлайн магазини с интегрирани плащания, кошница и управление на продукти. Достигнете до повече клиенти и увеличете продажбите си.</p>
-            <a href="#contact" class="btn">Запитване</a>
-          </div>
-          <div class="service-card animate-fade-in" style="animation-delay: 0.4s;">
-            <div class="service-icon">📱</div>
-            <h3>Мобилни Приложения</h3>
-            <p>Разработка на мобилни приложения за iOS и Android. Давайте на вашите клиенти възможност да ползват услугите ви отвсякъде.</p>
-            <a href="#contact" class="btn">Запитване</a>
-          </div>
-          <div class="service-card animate-fade-in" style="animation-delay: 0.5s;">
-            <div class="service-icon">🔧</div>
-            <h3>Internet of Things (IoT)</h3>
-            <p>Разработка на IoT решения за интелигентни устройства и системи. Възможности за автоматизация и мониторинг в реално време.</p>
-            <a href="#contact" class="btn">Запитване</a>
-          </div>
-          <div class="service-card animate-fade-in" style="animation-delay: 0.6s;">
-            <div class="service-icon">💡</div>
-            <h3>ИТ Консултиране</h3>
-            <p>Експертни консултации за вземане на правилните решения в дигиталното пространство. Помогаме ви да изберете най-подходящите технологии за бизнеса си.</p>
-            <a href="#contact" class="btn">Запитване</a>
-          </div>
-        </div>
-      </div>
-    </section>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-column"><h4>SEPANG TECH GROUP</h4><p>Професионални ИТ и дигитални решения — уеб сайтове, онлайн магазини, софтуер и консултиране.</p></div>
+      <div class="footer-column"><h4>Навигация</h4><ul><li><a href="#services">Услуги</a></li><li><a href="#pricing">Цени</a></li><li><a href="#payments">Плащане</a></li><li><a href="#about">За нас</a></li><li><a href="#contact">Контакт</a></li></ul></div>
+      <div class="footer-column"><h4>Услуги</h4><ul><li><a href="#services">Софтуер по поръчка</a></li><li><a href="#services">Уеб сайтове</a></li><li><a href="#services">Онлайн магазини</a></li><li><a href="#services">Мобилни приложения</a></li><li><a href="#services">IoT</a></li></ul></div>
+      <div class="footer-column"><h4>Контакт</h4><ul><li>🇧🇬 България</li><li>✉️ <a href="mailto:sepanggroupltd@gmail.com">sepanggroupltd@gmail.com</a></li><li>🏢 ЕИК: 203193777</li></ul></div>
+    </div>
+    <div class="footer-bottom">© 2026 SEPANG TECH GROUP ЕООД. Всички права запазени.</div>
+  </div>
+</footer>
 
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-      <div class="container">
-        <div class="section-header">
-          <h2>Ценоразпис</h2>
-          <p>Прозрачни начални цени за дигитални и ИТ услуги</p>
-        </div>
+<script>
+(() => {
+  const menuButton = document.querySelector('.mobile-menu-button');
+  const nav = document.getElementById('mainNav');
+  menuButton?.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', String(open));
+  });
+  nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    nav.classList.remove('open');
+    menuButton?.setAttribute('aria-expanded','false');
+  }));
 
-        <div class="pricing-grid">
+  const toast = document.getElementById('toast');
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 5000);
+  }
 
-          <div class="pricing-card animate-fade-in">
-            <div class="pricing-icon">🏢</div>
-            <h3>Бизнес сайт</h3>
-            <div class="price">1 490 <span>лв.</span></div>
-            <p class="price-note">Начална цена</p>
-            <ul>
-              <li>Професионален дизайн</li>
-              <li>До 10 страници</li>
-              <li>Мобилна оптимизация</li>
-              <li>SEO основа</li>
-              <li>Контактна форма</li>
-              <li>Google интеграции</li>
-            </ul>
-            <a href="#contact" class="btn">Заяви оферта</a>
-          </div>
+  document.getElementById('contactForm')?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const phone = form.phone.value.trim();
+    const subject = form.subject.value.trim();
+    const message = form.message.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-          <div class="pricing-card animate-fade-in">
-            <div class="pricing-icon">🛒</div>
-            <h3>Онлайн магазин</h3>
-            <div class="price">2 490 <span>лв.</span></div>
-            <p class="price-note">Начална цена</p>
-            <ul>
-              <li>Каталог с продукти</li>
-              <li>Количка и поръчки</li>
-              <li>Онлайн плащания</li>
-              <li>Еконт / Спиди интеграция</li>
-              <li>SEO оптимизация</li>
-              <li>Административен панел</li>
-            </ul>
-            <a href="#contact" class="btn">Заяви оферта</a>
-          </div>
+    if (!name || !email || !subject || !message) {
+      showToast('Моля, попълнете всички задължителни полета.');
+      return;
+    }
+    if (!emailRegex.test(email)) {
+      showToast('Моля, въведете валиден имейл адрес.');
+      return;
+    }
 
-          <div class="pricing-card animate-fade-in">
-            <div class="pricing-icon">⚙️</div>
-            <h3>Софтуер по поръчка</h3>
-            <div class="price">4 990 <span>лв.</span></div>
-            <p class="price-note">Начална цена</p>
-            <ul>
-              <li>Анализ на изискванията</li>
-              <li>Персонализирана архитектура</li>
-              <li>Web приложения</li>
-              <li>API и интеграции</li>
-              <li>Бази данни</li>
-              <li>Тестване и внедряване</li>
-            </ul>
-            <a href="#contact" class="btn">Заяви оферта</a>
-          </div>
+    const body = [
+      `Име: ${name}`,
+      `E-mail: ${email}`,
+      `Телефон: ${phone || 'Не е посочен'}`,
+      '',
+      'Съобщение:',
+      message
+    ].join('\n');
 
-          <div class="pricing-card animate-fade-in">
-            <div class="pricing-icon">📱</div>
-            <h3>Мобилно приложение</h3>
-            <div class="price">3 990 <span>лв.</span></div>
-            <p class="price-note">Начална цена</p>
-            <ul>
-              <li>iOS и Android</li>
-              <li>Модерен интерфейс</li>
-              <li>API интеграция</li>
-              <li>Push известия</li>
-              <li>Тестване</li>
-              <li>Публикуване</li>
-            </ul>
-            <a href="#contact" class="btn">Заяви оферта</a>
-          </div>
-
-          <div class="pricing-card animate-fade-in">
-            <div class="pricing-icon">🔎</div>
-            <h3>SEO оптимизация</h3>
-            <div class="price">390 <span>лв./мес.</span></div>
-            <p class="price-note">Начална цена</p>
-            <ul>
-              <li>SEO анализ</li>
-              <li>Ключови думи</li>
-              <li>On-page оптимизация</li>
-              <li>Техническо SEO</li>
-              <li>Месечен мониторинг</li>
-              <li>SEO препоръки</li>
-            </ul>
-            <a href="#contact" class="btn">Заяви оферта</a>
-          </div>
-
-          <div class="pricing-card animate-fade-in">
-            <div class="pricing-icon">🔧</div>
-            <h3>Поддръжка</h3>
-            <div class="price">99 <span>лв./мес.</span></div>
-            <p class="price-note">Начална цена</p>
-            <ul>
-              <li>Техническа поддръжка</li>
-              <li>Актуализации</li>
-              <li>Backup</li>
-              <li>Мониторинг</li>
-              <li>Консултация</li>
-              <li>Базова сигурност</li>
-            </ul>
-            <a href="#contact" class="btn">Заяви оферта</a>
-          </div>
-
-          <div class="pricing-card animate-fade-in">
-            <div class="pricing-icon">👨‍💻</div>
-            <h3>ИТ консултиране</h3>
-            <div class="price">80 <span>лв./час</span></div>
-            <p class="price-note">Начална цена</p>
-            <ul>
-              <li>ИТ консултации</li>
-              <li>Технологичен анализ</li>
-              <li>Планиране на проекти</li>
-              <li>Избор на технологии</li>
-              <li>Дигитална стратегия</li>
-              <li>Технически препоръки</li>
-            </ul>
-            <a href="#contact" class="btn">Заяви оферта</a>
-          </div>
-
-        </div>
-
-        <div class="pricing-note-box">
-          <strong>Важно:</strong>
-          Посочените цени са начални и ориентировъчни.
-          Крайната цена се определя според функционалностите,
-          дизайна, интеграциите, съдържанието и сроковете на проекта.
-        </div>
-      </div>
-    </section>
-
-
-
-    <!-- Payment Methods Section -->
-    <section id="payments" class="payments">
-      <div class="container">
-        <div class="section-header">
-          <h2>Начини на плащане</h2>
-          <p>Удобни и сигурни варианти за плащане според предпочитанията на клиента</p>
-        </div>
-
-        <div class="payments-grid">
-          <div class="payment-card animate-fade-in">
-            <div class="payment-icon">💳</div>
-            <h3>Visa / Mastercard</h3>
-            <p>Плащане с дебитна или кредитна карта при активирана картова услуга.</p>
-          </div>
-
-          <div class="payment-card animate-fade-in" style="animation-delay: 0.1s;">
-            <div class="payment-icon">🅿️</div>
-            <h3>PayPal</h3>
-            <p>Плащане чрез PayPal след предоставяне на конкретна платежна заявка.</p>
-          </div>
-
-          <div class="payment-card animate-fade-in" style="animation-delay: 0.2s;">
-            <div class="payment-icon">🏦</div>
-            <h3>Банков превод</h3>
-            <p>Плащане по банков път въз основа на издадена оферта или фактура.</p>
-          </div>
-
-          <div class="payment-card animate-fade-in" style="animation-delay: 0.3s;">
-            <div class="payment-icon">🧾</div>
-            <h3>Фактура</h3>
-            <p>Фирмено плащане с издаване на необходимите счетоводни документи.</p>
-          </div>
-        </div>
-
-        <div class="payment-note">
-          <strong>Важно:</strong> Онлайн плащанията се извършват само чрез активен платежен профил и сигурна платежна страница. Конкретният начин на плащане се уточнява при потвърждение на офертата.
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-      <div class="about-container">
-        <div class="about-image animate-fade-in">
-          <span>🏢 SEPANG TECH GROUP</span>
-        </div>
-        <div class="about-content animate-fade-in" style="animation-delay: 0.2s;">
-          <h2>За SEPANG TECH GROUP</h2>
-          <p>SEPANG TECH GROUP ЕООД е технологичен партньор за разработка на дигитални решения и ИТ решения за бизнес клиенти. Ние вярваме в партньорството с клиентите и изграждането на дълготрайни отношения, основани на доверие и качество.</p>
-          <p>Работим с професионален подход и подбираме технологиите според конкретните нужди на проекта, като разработваме комплексни софтуерни системи, уеб приложения и мобилни решения. Използваме най-съвременните технологии и методологии за гарантиране на високо качество и надеждност.</p>
-          <div class="stats-grid">
-            <div class="stat-item">
-              <div class="stat-number">01</div>
-              <div class="stat-label">Партньор за проекта</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">∞</div>
-              <div class="stat-label">Възможности за развитие</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">24/7</div>
-              <div class="stat-label">Дигитална достъпност</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Technologies Section -->
-    <section id="technologies" class="technologies">
-      <div class="technologies-container">
-        <h2 class="section-title">Технологии, които използваме</h2>
-        <p class="section-subtitle">Работим с най-съвременните технологии и платформи за да гарантираме най-доброто качество и производителност</p>
-        <div class="tech-categories">
-          <div class="tech-category animate-fade-in" style="animation-delay: 0.1s;">
-            <h3>Back-End Разработка</h3>
-            <div class="tech-list">
-              <span class="tech-item">Java</span>
-              <span class="tech-item">C#</span>
-              <span class="tech-item">.NET Core</span>
-              <span class="tech-item">PHP</span>
-              <span class="tech-item">Node.js</span>
-              <span class="tech-item">Python</span>
-              <span class="tech-item">Spring Boot</span>
-              <span class="tech-item">Django</span>
-              <span class="tech-item">Laravel</span>
-            </div>
-          </div>
-          <div class="tech-category animate-fade-in" style="animation-delay: 0.2s;">
-            <h3>Front-End Разработка</h3>
-            <div class="tech-list">
-              <span class="tech-item">HTML5</span>
-              <span class="tech-item">CSS3</span>
-              <span class="tech-item">JavaScript</span>
-              <span class="tech-item">TypeScript</span>
-              <span class="tech-item">React</span>
-              <span class="tech-item">Angular</span>
-              <span class="tech-item">Vue.js</span>
-              <span class="tech-item">jQuery</span>
-              <span class="tech-item">Bootstrap</span>
-              <span class="tech-item">Tailwind CSS</span>
-            </div>
-          </div>
-          <div class="tech-category animate-fade-in" style="animation-delay: 0.3s;">
-            <h3>Мобилни Технологии</h3>
-            <div class="tech-list">
-              <span class="tech-item">React Native</span>
-              <span class="tech-item">Flutter</span>
-              <span class="tech-item">Swift</span>
-              <span class="tech-item">Kotlin</span>
-              <span class="tech-item">Xamarin</span>
-              <span class="tech-item">Ionic</span>
-            </div>
-          </div>
-          <div class="tech-category animate-fade-in" style="animation-delay: 0.4s;">
-            <h3>Бази Данни</h3>
-            <div class="tech-list">
-              <span class="tech-item">MySQL</span>
-              <span class="tech-item">PostgreSQL</span>
-              <span class="tech-item">MongoDB</span>
-              <span class="tech-item">Oracle</span>
-              <span class="tech-item">SQL Server</span>
-              <span class="tech-item">Firebase</span>
-              <span class="tech-item">Redis</span>
-            </div>
-          </div>
-          <div class="tech-category animate-fade-in" style="animation-delay: 0.5s;">
-            <h3>Cloud & DevOps</h3>
-            <div class="tech-list">
-              <span class="tech-item">AWS</span>
-              <span class="tech-item">Azure</span>
-              <span class="tech-item">Google Cloud</span>
-              <span class="tech-item">Docker</span>
-              <span class="tech-item">Kubernetes</span>
-              <span class="tech-item">Git</span>
-              <span class="tech-item">CI/CD</span>
-              <span class="tech-item">Jenkins</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section class="why-choose">
-      <div class="why-choose-container">
-        <h2 class="section-title">Защо да изберете SEPANG TECH GROUP?</h2>
-        <p class="section-subtitle">Ние сме повече от софтуерна компания - ние сме ваш партньор за дигитално бъдеще</p>
-        <div class="why-choose-grid">
-          <div class="why-choose-item animate-fade-in" style="animation-delay: 0.1s;">
-            <h3>🎯 Качество</h3>
-            <p>Високото качество на софтуерните решения е наш ТОП приоритет. Всички наши продукти преминават през строги тестове за гарантиране на надеждност и производителност.</p>
-          </div>
-          <div class="why-choose-item animate-fade-in" style="animation-delay: 0.2s;">
-            <h3>💡 Иновация</h3>
-            <p>Стремим се да разработваме иновативни решения, които максимално да удовлетворяват изискванията на клиента. Използваме най-новите технологии и подходи.</p>
-          </div>
-          <div class="why-choose-item animate-fade-in" style="animation-delay: 0.3s;">
-            <h3>🤝 Партньорство</h3>
-            <p>Партньорството с нашите клиенти е основата за успеха на всеки софтуерен продукт. За нас клиентите са партньори, а не просто клиенти.</p>
-          </div>
-          <div class="why-choose-item animate-fade-in" style="animation-delay: 0.4s;">
-            <h3>⚡ Бързо изпълнение</h3>
-            <p>Гарантираме бързо и качествено изпълнение на всички проекти. Работим ефективно без да компромитираме качеството.</p>
-          </div>
-          <div class="why-choose-item animate-fade-in" style="animation-delay: 0.5s;">
-            <h3>🔒 Сигурност</h3>
-            <p>Сигурността на данните ви е от изключителна важност за нас. Прилагаме най-добрите практики за защита на информацията.</p>
-          </div>
-          <div class="why-choose-item animate-fade-in" style="animation-delay: 0.6s;">
-            <h3>💰 Конкурентни цени</h3>
-            <p>Предлагаме конкурентни цени за висококачествени услуги. Вярваме, че професионалните ИТ решения трябва да бъдат достъпни за всеки бизнес.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Clients Section -->
-    <section id="clients" class="clients">
-      <div class="clients-container">
-        <h2 class="section-title">Сектори и типове проекти</h2>
-        <p class="section-subtitle">Решенията могат да бъдат адаптирани към различни бизнес модели и организации</p>
-        <div class="clients-grid">
-          <div class="client-card animate-fade-in" style="animation-delay: 0.1s;">
-            <div class="client-logo">🏛️ Държавни Институции</div>
-          </div>
-          <div class="client-card animate-fade-in" style="animation-delay: 0.2s;">
-            <div class="client-logo">🏥 Здравни Осигурители</div>
-          </div>
-          <div class="client-card animate-fade-in" style="animation-delay: 0.3s;">
-            <div class="client-logo">🏢 Корпоративни Клиенти</div>
-          </div>
-          <div class="client-card animate-fade-in" style="animation-delay: 0.4s;">
-            <div class="client-logo">📦 Логистика</div>
-          </div>
-          <div class="client-card animate-fade-in" style="animation-delay: 0.5s;">
-            <div class="client-logo">🏪 Търговски Вериги</div>
-          </div>
-          <div class="client-card animate-fade-in" style="animation-delay: 0.6s;">
-            <div class="client-logo">🏦 Финансови Учреждения</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="contact-container">
-        <div class="contact-info animate-fade-in">
-          <h2>Свържете се с нас</h2>
-          <p>Готови сме да отговорим на всички ваши въпроси и да обсъдим как можем да ви помогнем с ИТ нуждите на вашия бизнес.</p>
-          <div class="contact-details">
-            <div class="contact-item">
-              <div class="contact-icon">📍</div>
-              <div class="contact-text">
-                <h4>Адрес</h4>
-                <p>България</p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">🌐</div>
-              <div class="contact-text">
-                <h4>Уеб услуги</h4>
-                <p>Сайтове, магазини и софтуер</p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">✉️</div>
-              <div class="contact-text">
-                <h4>Имейл</h4>
-                <p><a href="mailto:sepanggroupltd@gmail.com">sepanggroupltd@gmail.com</a></p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">🏢</div>
-              <div class="contact-text">
-                <h4>ЕИК</h4>
-                <p>203193777</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="contact-form animate-fade-in" style="animation-delay: 0.2s;">
-          <h3>Изпратете ни съобщение</h3>
-          <form id="contactForm">
-            <div class="form-group">
-              <label for="name">Име</label>
-              <input type="text" id="name" name="name" required placeholder="Вашето име" />
-            </div>
-            <div class="form-group">
-              <label for="email">Имейл</label>
-              <input type="email" id="email" name="email" required placeholder="Вашият имейл" />
-            </div>
-            <div class="form-group">
-              <label for="phone">Телефон</label>
-              <input type="tel" id="phone" name="phone" placeholder="Вашият телефон" />
-            </div>
-            <div class="form-group">
-              <label for="subject">Тема</label>
-              <input type="text" id="subject" name="subject" required placeholder="Тема на съобщението" />
-            </div>
-            <div class="form-group">
-              <label for="message">Съобщение</label>
-              <textarea id="message" name="message" required placeholder="Вашето съобщение..."></textarea>
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn">Изпрати съобщение</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <div class="footer-container">
-        <div class="footer-grid">
-          <div class="footer-column animate-fade-in">
-            <h4>SEPANG TECH GROUP</h4>
-            <p>Професионални ИТ решения за вашия бизнес. Разработка на софтуер, уеб сайтове и мобилни приложения.</p>
-          </div>
-          <div class="footer-column animate-fade-in" style="animation-delay: 0.1s;">
-            <h4>Бързи връзки</h4>
-            <ul>
-              <li><a href="#hero">Начало</a></li>
-              <li><a href="#services">Услуги</a></li>
-               <li><a href="#pricing">Цени</a></li>
-            <li><a href="#payments">Плащане</a></li>
-              <li><a href="#about">За нас</a></li>
-              <li><a href="#technologies">Технологии</a></li>
-              <li><a href="#clients">Клиенти</a></li>
-              <li><a href="#contact">Контакт</a></li>
-            </ul>
-          </div>
-          <div class="footer-column animate-fade-in" style="animation-delay: 0.2s;">
-            <h4>Услуги</h4>
-            <ul>
-              <li><a href="#services">Разработка на софтуер</a></li>
-              <li><a href="#services">Уеб сайтове</a></li>
-              <li><a href="#services">Онлайн магазини</a></li>
-              <li><a href="#services">Мобилни приложения</a></li>
-              <li><a href="#services">IoT решения</a></li>
-              <li><a href="#services">ИТ консултации</a></li>
-            </ul>
-          </div>
-          <div class="footer-column animate-fade-in" style="animation-delay: 0.3s;">
-            <h4>Контакт</h4>
-            <ul>
-              <li>📍 България</li>
-              <li>✉️ <a href="mailto:sepanggroupltd@gmail.com">sepanggroupltd@gmail.com</a></li>
-              <li>🏢 ЕИК: 203193777</li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom animate-fade-in" style="animation-delay: 0.4s;">
-          <p>© 2026 SEPANG TECH GROUP ЕООД. Всички права запазени.</p>
-        </div>
-      </div>
-    </footer>
-
-    <script>
-
-      const mobileMenuButton = document.querySelector('.mobile-menu-button');
-      const mainNav = document.querySelector('header nav');
-      mobileMenuButton?.addEventListener('click', () => {
-        const open = mainNav.classList.toggle('open');
-        mobileMenuButton.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-      mainNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mainNav.classList.remove('open')));
-
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
-        });
-      });
-
-      // Contact form — works on any static web server by opening the visitor's mail client.
-      document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const name = this.elements.name.value.trim();
-        const email = this.elements.email.value.trim();
-        const phone = this.elements.phone.value.trim();
-        const subject = this.elements.subject.value.trim();
-        const message = this.elements.message.value.trim();
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!name || !email || !subject || !message) { alert('Моля попълнете всички задължителни полета.'); return; }
-        if (!emailRegex.test(email)) { alert('Моля въведете валиден имейл адрес.'); return; }
-        const body = `Име: ${name}\nE-mail: ${email}\nТелефон: ${phone || 'Не е посочен'}\n\nСъобщение:\n${message}`;
-        window.location.href = `mailto:sepanggroupltd@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      });
-
-      // Animate elements on scroll
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-          }
-        });
-      }, observerOptions);
-
-      // Observe all elements with animation classes
-      document.querySelectorAll('.service-card, .pricing-card, .tech-category, .why-choose-item, .client-card, .contact-item, .footer-column').forEach(el => {
-        observer.observe(el);
-      });
-
-      // Add loaded class to body for initial animations
-      document.body.classList.add('loaded');
-    </script>
-  </body>
+    window.location.href =
+      `mailto:sepanggroupltd@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+})();
+</script>
+</body>
 </html>
