@@ -686,6 +686,91 @@
 
       /* Responsive Design */
 
+      /* Payment Methods Section */
+      .payments {
+        padding: 4rem 0;
+        background: #fff;
+      }
+
+      .payments .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .payments-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1.25rem;
+      }
+
+      .payment-card {
+        background: #f8fafc;
+        border: 1px solid rgba(37, 99, 235, 0.12);
+        border-radius: 14px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .payment-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.09);
+      }
+
+      .payment-icon {
+        width: 64px;
+        height: 64px;
+        margin: 0 auto 1rem;
+        border-radius: 14px;
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.7rem;
+      }
+
+      .payment-card h3 {
+        margin: 0 0 0.5rem;
+        color: var(--dark-color);
+        font-size: 1.1rem;
+      }
+
+      .payment-card p {
+        margin: 0;
+        color: var(--gray-color);
+        font-size: 0.9rem;
+        line-height: 1.55;
+      }
+
+      .payment-note {
+        margin-top: 2rem;
+        padding: 1.15rem 1.25rem;
+        background: #eff6ff;
+        border: 1px solid #bfdbfe;
+        border-radius: 10px;
+        color: #334155;
+        text-align: center;
+      }
+
+      .payment-note strong {
+        color: var(--dark-color);
+      }
+
+      @media (max-width: 900px) {
+        .payments-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 600px) {
+        .payments-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
       /* Pricing Section */
       .pricing {
         padding: 4rem 0;
@@ -934,6 +1019,7 @@
             <li><a href="#hero">Начало</a></li>
             <li><a href="#services">Услуги</a></li>
             <li><a href="#pricing">Цени</a></li>
+            <li><a href="#payments">Плащане</a></li>
             <li><a href="#about">За нас</a></li>
             <li><a href="#technologies">Технологии</a></li>
             <li><a href="#clients">Клиенти</a></li>
@@ -1132,6 +1218,48 @@
           Посочените цени са начални и ориентировъчни.
           Крайната цена се определя според функционалностите,
           дизайна, интеграциите, съдържанието и сроковете на проекта.
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Payment Methods Section -->
+    <section id="payments" class="payments">
+      <div class="container">
+        <div class="section-header">
+          <h2>Начини на плащане</h2>
+          <p>Удобни и сигурни варианти за плащане според предпочитанията на клиента</p>
+        </div>
+
+        <div class="payments-grid">
+          <div class="payment-card animate-fade-in">
+            <div class="payment-icon">💳</div>
+            <h3>Visa / Mastercard</h3>
+            <p>Плащане с дебитна или кредитна карта при активирана картова услуга.</p>
+          </div>
+
+          <div class="payment-card animate-fade-in" style="animation-delay: 0.1s;">
+            <div class="payment-icon">🅿️</div>
+            <h3>PayPal</h3>
+            <p>Плащане чрез PayPal след предоставяне на конкретна платежна заявка.</p>
+          </div>
+
+          <div class="payment-card animate-fade-in" style="animation-delay: 0.2s;">
+            <div class="payment-icon">🏦</div>
+            <h3>Банков превод</h3>
+            <p>Плащане по банков път въз основа на издадена оферта или фактура.</p>
+          </div>
+
+          <div class="payment-card animate-fade-in" style="animation-delay: 0.3s;">
+            <div class="payment-icon">🧾</div>
+            <h3>Фактура</h3>
+            <p>Фирмено плащане с издаване на необходимите счетоводни документи.</p>
+          </div>
+        </div>
+
+        <div class="payment-note">
+          <strong>Важно:</strong> Онлайн плащанията се извършват само чрез активен платежен профил и сигурна платежна страница. Конкретният начин на плащане се уточнява при потвърждение на офертата.
         </div>
       </div>
     </section>
@@ -1383,6 +1511,7 @@
               <li><a href="#hero">Начало</a></li>
               <li><a href="#services">Услуги</a></li>
                <li><a href="#pricing">Цени</a></li>
+            <li><a href="#payments">Плащане</a></li>
               <li><a href="#about">За нас</a></li>
               <li><a href="#technologies">Технологии</a></li>
               <li><a href="#clients">Клиенти</a></li>
