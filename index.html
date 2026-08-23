@@ -685,6 +685,152 @@
       }
 
       /* Responsive Design */
+
+      /* Pricing Section */
+      .pricing {
+        padding: 4rem 0;
+        background: var(--light-color);
+      }
+
+      .pricing .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .section-header h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--dark-color);
+        margin-bottom: 0.75rem;
+      }
+
+      .section-header p {
+        color: var(--gray-color);
+        font-size: 1.1rem;
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
+      }
+
+      .pricing-card {
+        background: #fff;
+        border: 1px solid rgba(37, 99, 235, 0.12);
+        border-radius: 14px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .pricing-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .pricing-icon {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.55rem;
+        margin-bottom: 1rem;
+      }
+
+      .pricing-card h3 {
+        font-size: 1.35rem;
+        color: var(--dark-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .price {
+        color: var(--primary-color);
+        font-size: 2rem;
+        line-height: 1.15;
+        font-weight: 800;
+        margin-top: 0.25rem;
+      }
+
+      .price span {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--gray-color);
+      }
+
+      .price-note {
+        color: var(--gray-color);
+        font-size: 0.9rem;
+        margin: 0.35rem 0 1.25rem;
+      }
+
+      .pricing-card ul {
+        list-style: none;
+        margin: 0 0 1.5rem;
+        padding: 0;
+        flex: 1;
+      }
+
+      .pricing-card li {
+        position: relative;
+        padding: 0.48rem 0 0.48rem 1.35rem;
+        color: var(--gray-color);
+        font-size: 0.95rem;
+        border-bottom: 1px solid rgba(100, 116, 139, 0.12);
+      }
+
+      .pricing-card li:last-child {
+        border-bottom: 0;
+      }
+
+      .pricing-card li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0.48rem;
+        color: var(--success-color);
+        font-weight: 800;
+      }
+
+      .pricing-card .btn {
+        display: inline-block;
+        text-align: center;
+        background: var(--primary-color);
+        color: #fff;
+        border: 2px solid var(--primary-color);
+        width: 100%;
+      }
+
+      .pricing-card .btn:hover {
+        background: var(--secondary-color);
+        border-color: var(--secondary-color);
+      }
+
+      .pricing-note-box {
+        margin-top: 2rem;
+        padding: 1.1rem 1.25rem;
+        background: #fff;
+        border-left: 4px solid var(--primary-color);
+        border-radius: 8px;
+        color: var(--gray-color);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+      }
+
+      .pricing-note-box strong {
+        color: var(--dark-color);
+      }
+
       @media (max-width: 768px) {
         .header-container {
           flex-direction: column;
@@ -764,9 +910,10 @@
       }
     
       .mobile-menu-button{display:none;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:8px;padding:.55rem .75rem;font-size:1.1rem;cursor:pointer}
+      @media (max-width: 1100px){.pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
       @media (max-width: 900px){
         header{padding:.75rem 0}.header-container{flex-direction:row!important;gap:0}.mobile-menu-button{display:block}header nav{display:none;position:absolute;left:0;right:0;top:74px;background:#12327f;padding:1rem;box-shadow:0 15px 30px rgba(0,0,0,.2)}header nav.open{display:block}header nav ul{flex-direction:column;gap:.8rem!important;margin:0;padding:0;text-align:center}header nav a{display:block;padding:.45rem}.cta-button{display:none}.logo-text{font-size:1.05rem}.logo-icon{width:42px;height:42px}.hero{padding:5rem 0 4rem}.hero h1{font-size:clamp(2.2rem,9vw,4rem)}.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tech-categories{grid-template-columns:repeat(2,minmax(0,1fr))}.why-choose-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-      @media (max-width: 600px){.services-grid,.tech-categories,.why-choose-grid{grid-template-columns:1fr}.hero-buttons .btn{width:100%}.section-title{font-size:2rem}.about-image{height:260px}.footer-grid{grid-template-columns:1fr}.contact-form{padding:1.25rem}}
+      @media (max-width: 600px){.services-grid,.tech-categories,.why-choose-grid,.pricing-grid{grid-template-columns:1fr}.hero-buttons .btn{width:100%}.section-title{font-size:2rem}.about-image{height:260px}.footer-grid{grid-template-columns:1fr}.contact-form{padding:1.25rem}}
 </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   </head>
@@ -786,6 +933,7 @@
           <ul>
             <li><a href="#hero">Начало</a></li>
             <li><a href="#services">Услуги</a></li>
+            <li><a href="#pricing">Цени</a></li>
             <li><a href="#about">За нас</a></li>
             <li><a href="#technologies">Технологии</a></li>
             <li><a href="#clients">Клиенти</a></li>
@@ -812,7 +960,7 @@
     <section id="services" class="services">
       <div class="services-container">
         <h2 class="section-title">Нашите Услуги</h2>
-        <p class="section-subtitle">Предлагаме пълният спектър от ИТ услуги за вашия бизнес, основани на най-добрите световни практики и технологии</p>
+        <p class="section-subtitle">Предлагаме пълния спектър от ИТ услуги за вашия бизнес, основани на най-добрите световни практики и технологии</p>
         <div class="services-grid">
           <div class="service-card animate-fade-in" style="animation-delay: 0.1s;">
             <div class="service-icon">💻</div>
@@ -835,7 +983,7 @@
           <div class="service-card animate-fade-in" style="animation-delay: 0.4s;">
             <div class="service-icon">📱</div>
             <h3>Мобилни Приложения</h3>
-            <p>Разработка на мобилни приложения за iOS и Android. Давайте на вашите клиенти възможност да ползват услугите ви от въвсякъде.</p>
+            <p>Разработка на мобилни приложения за iOS и Android. Давайте на вашите клиенти възможност да ползват услугите ви отвсякъде.</p>
             <a href="#contact" class="btn">Запитване</a>
           </div>
           <div class="service-card animate-fade-in" style="animation-delay: 0.5s;">
@@ -853,139 +1001,141 @@
         </div>
       </div>
     </section>
-<!-- Pricing Section -->
-<section id="pricing" class="pricing">
-  <div class="container">
 
-    <div class="section-header">
-      <h2>Ценоразпис</h2>
-      <p>Прозрачни начални цени за дигитални и ИТ услуги</p>
-    </div>
 
-    <div class="pricing-grid">
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+      <div class="container">
+        <div class="section-header">
+          <h2>Ценоразпис</h2>
+          <p>Прозрачни начални цени за дигитални и ИТ услуги</p>
+        </div>
 
-      <div class="pricing-card">
-        <div class="pricing-icon">🏢</div>
-        <h3>Бизнес сайт</h3>
-        <div class="price">1 490 <span>лв.</span></div>
-        <p class="price-note">Начална цена</p>
-        <ul>
-          <li>Професионален дизайн</li>
-          <li>До 10 страници</li>
-          <li>Мобилна оптимизация</li>
-          <li>SEO основа</li>
-          <li>Контактна форма</li>
-          <li>Google интеграции</li>
-        </ul>
-        <a href="#contact" class="btn">Заяви оферта</a>
+        <div class="pricing-grid">
+
+          <div class="pricing-card animate-fade-in">
+            <div class="pricing-icon">🏢</div>
+            <h3>Бизнес сайт</h3>
+            <div class="price">1 490 <span>лв.</span></div>
+            <p class="price-note">Начална цена</p>
+            <ul>
+              <li>Професионален дизайн</li>
+              <li>До 10 страници</li>
+              <li>Мобилна оптимизация</li>
+              <li>SEO основа</li>
+              <li>Контактна форма</li>
+              <li>Google интеграции</li>
+            </ul>
+            <a href="#contact" class="btn">Заяви оферта</a>
+          </div>
+
+          <div class="pricing-card animate-fade-in">
+            <div class="pricing-icon">🛒</div>
+            <h3>Онлайн магазин</h3>
+            <div class="price">2 490 <span>лв.</span></div>
+            <p class="price-note">Начална цена</p>
+            <ul>
+              <li>Каталог с продукти</li>
+              <li>Количка и поръчки</li>
+              <li>Онлайн плащания</li>
+              <li>Еконт / Спиди интеграция</li>
+              <li>SEO оптимизация</li>
+              <li>Административен панел</li>
+            </ul>
+            <a href="#contact" class="btn">Заяви оферта</a>
+          </div>
+
+          <div class="pricing-card animate-fade-in">
+            <div class="pricing-icon">⚙️</div>
+            <h3>Софтуер по поръчка</h3>
+            <div class="price">4 990 <span>лв.</span></div>
+            <p class="price-note">Начална цена</p>
+            <ul>
+              <li>Анализ на изискванията</li>
+              <li>Персонализирана архитектура</li>
+              <li>Web приложения</li>
+              <li>API и интеграции</li>
+              <li>Бази данни</li>
+              <li>Тестване и внедряване</li>
+            </ul>
+            <a href="#contact" class="btn">Заяви оферта</a>
+          </div>
+
+          <div class="pricing-card animate-fade-in">
+            <div class="pricing-icon">📱</div>
+            <h3>Мобилно приложение</h3>
+            <div class="price">3 990 <span>лв.</span></div>
+            <p class="price-note">Начална цена</p>
+            <ul>
+              <li>iOS и Android</li>
+              <li>Модерен интерфейс</li>
+              <li>API интеграция</li>
+              <li>Push известия</li>
+              <li>Тестване</li>
+              <li>Публикуване</li>
+            </ul>
+            <a href="#contact" class="btn">Заяви оферта</a>
+          </div>
+
+          <div class="pricing-card animate-fade-in">
+            <div class="pricing-icon">🔎</div>
+            <h3>SEO оптимизация</h3>
+            <div class="price">390 <span>лв./мес.</span></div>
+            <p class="price-note">Начална цена</p>
+            <ul>
+              <li>SEO анализ</li>
+              <li>Ключови думи</li>
+              <li>On-page оптимизация</li>
+              <li>Техническо SEO</li>
+              <li>Месечен мониторинг</li>
+              <li>SEO препоръки</li>
+            </ul>
+            <a href="#contact" class="btn">Заяви оферта</a>
+          </div>
+
+          <div class="pricing-card animate-fade-in">
+            <div class="pricing-icon">🔧</div>
+            <h3>Поддръжка</h3>
+            <div class="price">99 <span>лв./мес.</span></div>
+            <p class="price-note">Начална цена</p>
+            <ul>
+              <li>Техническа поддръжка</li>
+              <li>Актуализации</li>
+              <li>Backup</li>
+              <li>Мониторинг</li>
+              <li>Консултация</li>
+              <li>Базова сигурност</li>
+            </ul>
+            <a href="#contact" class="btn">Заяви оферта</a>
+          </div>
+
+          <div class="pricing-card animate-fade-in">
+            <div class="pricing-icon">👨‍💻</div>
+            <h3>ИТ консултиране</h3>
+            <div class="price">80 <span>лв./час</span></div>
+            <p class="price-note">Начална цена</p>
+            <ul>
+              <li>ИТ консултации</li>
+              <li>Технологичен анализ</li>
+              <li>Планиране на проекти</li>
+              <li>Избор на технологии</li>
+              <li>Дигитална стратегия</li>
+              <li>Технически препоръки</li>
+            </ul>
+            <a href="#contact" class="btn">Заяви оферта</a>
+          </div>
+
+        </div>
+
+        <div class="pricing-note-box">
+          <strong>Важно:</strong>
+          Посочените цени са начални и ориентировъчни.
+          Крайната цена се определя според функционалностите,
+          дизайна, интеграциите, съдържанието и сроковете на проекта.
+        </div>
       </div>
+    </section>
 
-      <div class="pricing-card">
-        <div class="pricing-icon">🛒</div>
-        <h3>Онлайн магазин</h3>
-        <div class="price">2 490 <span>лв.</span></div>
-        <p class="price-note">Начална цена</p>
-        <ul>
-          <li>Каталог с продукти</li>
-          <li>Количка и поръчки</li>
-          <li>Онлайн плащания</li>
-          <li>Еконт / Спиди интеграция</li>
-          <li>SEO оптимизация</li>
-          <li>Административен панел</li>
-        </ul>
-        <a href="#contact" class="btn">Заяви оферта</a>
-      </div>
-
-      <div class="pricing-card">
-        <div class="pricing-icon">⚙️</div>
-        <h3>Софтуер по поръчка</h3>
-        <div class="price">4 990 <span>лв.</span></div>
-        <p class="price-note">Начална цена</p>
-        <ul>
-          <li>Анализ на изискванията</li>
-          <li>Персонализирана архитектура</li>
-          <li>Web приложения</li>
-          <li>API и интеграции</li>
-          <li>Бази данни</li>
-          <li>Тестване и внедряване</li>
-        </ul>
-        <a href="#contact" class="btn">Заяви оферта</a>
-      </div>
-
-      <div class="pricing-card">
-        <div class="pricing-icon">📱</div>
-        <h3>Мобилно приложение</h3>
-        <div class="price">3 990 <span>лв.</span></div>
-        <p class="price-note">Начална цена</p>
-        <ul>
-          <li>iOS и Android</li>
-          <li>Модерен интерфейс</li>
-          <li>API интеграция</li>
-          <li>Push известия</li>
-          <li>Тестване</li>
-          <li>Публикуване</li>
-        </ul>
-        <a href="#contact" class="btn">Заяви оферта</a>
-      </div>
-
-      <div class="pricing-card">
-        <div class="pricing-icon">🔎</div>
-        <h3>SEO оптимизация</h3>
-        <div class="price">390 <span>лв./мес.</span></div>
-        <p class="price-note">Начална цена</p>
-        <ul>
-          <li>SEO анализ</li>
-          <li>Ключови думи</li>
-          <li>On-page оптимизация</li>
-          <li>Техническо SEO</li>
-          <li>Месечен мониторинг</li>
-          <li>SEO препоръки</li>
-        </ul>
-        <a href="#contact" class="btn">Заяви оферта</a>
-      </div>
-
-      <div class="pricing-card">
-        <div class="pricing-icon">🔧</div>
-        <h3>Поддръжка</h3>
-        <div class="price">99 <span>лв./мес.</span></div>
-        <p class="price-note">Начална цена</p>
-        <ul>
-          <li>Техническа поддръжка</li>
-          <li>Актуализации</li>
-          <li>Backup</li>
-          <li>Мониторинг</li>
-          <li>Консултация</li>
-          <li>Базова сигурност</li>
-        </ul>
-        <a href="#contact" class="btn">Заяви оферта</a>
-      </div>
-
-      <div class="pricing-card">
-        <div class="pricing-icon">👨‍💻</div>
-        <h3>ИТ консултиране</h3>
-        <div class="price">80 <span>лв./час</span></div>
-        <p class="price-note">Начална цена</p>
-        <ul>
-          <li>ИТ консултации</li>
-          <li>Технологичен анализ</li>
-          <li>Планиране на проекти</li>
-          <li>Избор на технологии</li>
-          <li>Дигитална стратегия</li>
-          <li>Технически препоръки</li>
-        </ul>
-        <a href="#contact" class="btn">Заяви оферта</a>
-      </div>
-
-    </div>
-    <div class="pricing-note-box">
-      <strong>Важно:</strong>
-      Посочените цени са начални и ориентировъчни.
-      Крайната цена се определя според функционалностите,
-      дизайна, интеграциите, съдържанието и сроковете на проекта.
-    </div>
-
-  </div>
-</section>
     <!-- About Section -->
     <section id="about" class="about">
       <div class="about-container">
@@ -994,8 +1144,8 @@
         </div>
         <div class="about-content animate-fade-in" style="animation-delay: 0.2s;">
           <h2>За SEPANG TECH GROUP</h2>
-          <p>SEPANG TECH GROUP ЕООД сме технологичен партньор за разработка на дигитални решения в разработката на ИТ решения за бизнес клиенти. Ние вярваме в партньорството с клиентите и изграждането на дълготрайни отношения, основани на доверие и качество.</p>
-          <p>Работим с професионален подход и подбираме технологиите според в разработката на комплексни софтуерни системи, уеб приложения и мобилни решения. Използваме най-съвременните технологии и методологии за гарантиране на високо качество и надеждност.</p>
+          <p>SEPANG TECH GROUP ЕООД е технологичен партньор за разработка на дигитални решения и ИТ решения за бизнес клиенти. Ние вярваме в партньорството с клиентите и изграждането на дълготрайни отношения, основани на доверие и качество.</p>
+          <p>Работим с професионален подход и подбираме технологиите според конкретните нужди на проекта, като разработваме комплексни софтуерни системи, уеб приложения и мобилни решения. Използваме най-съвременните технологии и методологии за гарантиране на високо качество и надеждност.</p>
           <div class="stats-grid">
             <div class="stat-item">
               <div class="stat-number">01</div>
@@ -1232,6 +1382,7 @@
             <ul>
               <li><a href="#hero">Начало</a></li>
               <li><a href="#services">Услуги</a></li>
+               <li><a href="#pricing">Цени</a></li>
               <li><a href="#about">За нас</a></li>
               <li><a href="#technologies">Технологии</a></li>
               <li><a href="#clients">Клиенти</a></li>
@@ -1316,57 +1467,14 @@
           }
         });
       }, observerOptions);
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-          }
-        });
-      }, observerOptions);
 
-      // LANGUAGE SWITCHER
-      const languageSwitcher = document.createElement('div');
-      languageSwitcher.id = 'language-switcher';
-
-      languageSwitcher.innerHTML = `
-        <button type="button" id="lang-bg">🇧🇬 BG</button>
-        <button type="button" id="lang-en">🇬🇧 EN</button>
-      `;
-
-      languageSwitcher.style.cssText = `
-        position: fixed;
-        top: 90px;
-        right: 20px;
-        z-index: 9999;
-        display: flex;
-        gap: 6px;
-      `;
-
-      document.body.appendChild(languageSwitcher);
-
-      document.querySelectorAll('#language-switcher button').forEach(button => {
-        button.style.cssText = `
-          padding: 7px 11px;
-          border: 1px solid #ddd;
-          border-radius: 6px;
-          background: white;
-          color: #1e293b;
-          cursor: pointer;
-          font-weight: 600;
-        `;
+      // Observe all elements with animation classes
+      document.querySelectorAll('.service-card, .pricing-card, .tech-category, .why-choose-item, .client-card, .contact-item, .footer-column').forEach(el => {
+        observer.observe(el);
       });
 
-      document.getElementById('lang-bg').addEventListener('click', () => {
-        document.documentElement.lang = 'bg';
-        localStorage.setItem('siteLanguage', 'bg');
-      });
-
-      document.getElementById('lang-en').addEventListener('click', () => {
-        document.documentElement.lang = 'en';
-        localStorage.setItem('siteLanguage', 'en');
-      });
-    
-</script>
+      // Add loaded class to body for initial animations
+      document.body.classList.add('loaded');
+    </script>
   </body>
 </html>
-
