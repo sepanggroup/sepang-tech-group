@@ -1,0 +1,1 @@
+The premium interactive test suite is intentionally kept as an executable .mjs test; run it with Node.js from the repository root.
