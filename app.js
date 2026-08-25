@@ -32,13 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   import('./pricing-config.js').then(({ BASE_PRODUCTS, ADDONS, calculateEstimate }) => {
-    injectPremiumLayer(BASE_PRODUCTS, ADDONS, calculateEstimate);
+    injectPremiumLayer(BASE_PRODUCTS, ADDONS, calculateEstimate, reveal);
   }).catch(() => {
     // Core site remains usable even if the optional pricing layer fails to load.
   });
 });
 
-function injectPremiumLayer(BASE_PRODUCTS, ADDONS, calculateEstimate) {
+function injectPremiumLayer(BASE_PRODUCTS, ADDONS, calculateEstimate, reveal) {
   if (document.querySelector('#premium-services')) return;
   const isEnglish = document.documentElement.lang === 'en';
   const main = document.querySelector('main');
@@ -58,9 +58,9 @@ function injectPremiumLayer(BASE_PRODUCTS, ADDONS, calculateEstimate) {
   }
 
   const t = isEnglish ? {
-    servicesEyebrow: 'Productized services', servicesTitle: 'Premium services with clear, fixed entry pricing.', servicesLead: 'Choose a focused service without starting a full custom project. Final scope is confirmed before delivery.', choose: 'Add to estimator →', oneTime: 'one-time', monthly: '/ month', estimatorEyebrow: 'Project configurator', estimatorTitle: 'Build your project.', estimatorLead: 'Select a starting package and optional services. The result is an indicative estimate, not a binding quotation.', base: 'Starting package', addons: 'Optional services', total: 'Estimated investment', note: 'PayPal buttons remain tied to the four fixed core packages. This estimator does not change those payment links.', request: 'Request this configuration →', reset: 'Reset', noSelection: 'Select a starting package', contactMessage: 'Hello SEPANG TECH GROUP,\n\nI am interested in this configuration:\n'
+    servicesEyebrow: 'Productized services', servicesTitle: 'Premium services with clear, fixed entry pricing.', servicesLead: 'Choose a focused service without starting a full custom project. Final scope is confirmed before delivery.', choose: 'Add to estimator →', estimatorEyebrow: 'Project configurator', estimatorTitle: 'Build your project.', estimatorLead: 'Select a starting package and optional services. The result is an indicative estimate, not a binding quotation.', base: 'Starting package', addons: 'Optional services', total: 'Estimated investment', note: 'PayPal buttons remain tied to the four fixed core packages. This estimator does not change those payment links.', request: 'Request this configuration →', reset: 'Reset', noSelection: 'Select a starting package', contactMessage: 'Hello SEPANG TECH GROUP,\n\nI am interested in this configuration:\n'
   } : {
-    servicesEyebrow: 'Продуктови услуги', servicesTitle: 'Премиум услуги с ясни фиксирани начални цени.', servicesLead: 'Изберете конкретна услуга, без да започвате пълен custom проект. Финалният обхват се потвърждава преди изпълнение.', choose: 'Добави в конфигуратора →', oneTime: 'еднократно', monthly: '/ месец', estimatorEyebrow: 'Конфигуратор на проект', estimatorTitle: 'Изгради своя проект.', estimatorLead: 'Изберете основен пакет и допълнителни услуги. Резултатът е ориентировъчна инвестиция, а не обвързваща оферта.', base: 'Основен пакет', addons: 'Допълнителни услуги', total: 'Ориентировъчна инвестиция', note: 'PayPal бутоните остават свързани само с четирите фиксирани основни пакета. Конфигураторът не променя тези платежни връзки.', request: 'Заяви тази конфигурация →', reset: 'Изчисти', noSelection: 'Изберете основен пакет', contactMessage: 'Здравейте, SEPANG TECH GROUP,\n\nИнтересувам се от следната конфигурация:\n'
+    servicesEyebrow: 'Продуктови услуги', servicesTitle: 'Премиум услуги с ясни фиксирани начални цени.', servicesLead: 'Изберете конкретна услуга, без да започвате пълен custom проект. Финалният обхват се потвърждава преди изпълнение.', choose: 'Добави в конфигуратора →', estimatorEyebrow: 'Конфигуратор на проект', estimatorTitle: 'Изгради своя проект.', estimatorLead: 'Изберете основен пакет и допълнителни услуги. Резултатът е ориентировъчна инвестиция, а не обвързваща оферта.', base: 'Основен пакет', addons: 'Допълнителни услуги', total: 'Ориентировъчна инвестиция', note: 'PayPal бутоните остават свързани само с четирите фиксирани основни пакета. Конфигураторът не променя тези платежни връзки.', request: 'Заяви тази конфигурация →', reset: 'Изчисти', noSelection: 'Изберете основен пакет', contactMessage: 'Здравейте, SEPANG TECH GROUP,\n\nИнтересувам се от следната конфигурация:\n'
   };
 
   const addonCopy = isEnglish ? {
@@ -115,13 +115,15 @@ function injectPremiumLayer(BASE_PRODUCTS, ADDONS, calculateEstimate) {
         <label class="estimate-label">${t.base}<select id="estimate-base"><option value="">${t.noSelection}</option>${baseOptions}</select></label>
         <div class="estimate-label">${t.addons}</div>
         <div class="estimate-options">${addonChecks}</div>
-        <div class="estimate-total"><span>${t.total}</span><strong id="estimate-total">€0.00</strong></div>
+        <div class="estimate-total"><span>${t.total}</span><strong id="estimate-total" aria-live="polite">€0.00</strong></div>
         <div class="estimate-actions"><button class="btn btn-light" id="estimate-request" type="button">${t.request}</button><button class="btn btn-outline" id="estimate-reset" type="button">${t.reset}</button></div>
       </div>
     </div>`;
 
   main.insertBefore(serviceSection, contact);
   main.insertBefore(estimator, contact);
+  serviceSection.querySelectorAll('.reveal').forEach((element) => reveal.observe(element));
+  estimator.querySelectorAll('.reveal').forEach((element) => reveal.observe(element));
 
   const baseSelect = document.querySelector('#estimate-base');
   const totalEl = document.querySelector('#estimate-total');
