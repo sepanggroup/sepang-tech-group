@@ -58,9 +58,9 @@ function injectPremiumLayer(BASE_PRODUCTS, ADDONS, calculateEstimate, reveal) {
   }
 
   const t = isEnglish ? {
-    servicesEyebrow: 'Productized services', servicesTitle: 'Premium services with clear, fixed entry pricing.', servicesLead: 'Choose a focused service without starting a full custom project. Final scope is confirmed before delivery.', choose: 'Add to estimator →', pay: 'Pay with PayPal →', oneTime: 'one-time', monthly: '/ month', estimatorEyebrow: 'Project configurator', estimatorTitle: 'Build your project.', estimatorLead: 'Select a starting package and optional services. The result is an indicative estimate, not a binding quotation.', base: 'Starting package', addons: 'Optional services', total: 'Estimated investment', note: 'PayPal payment links are shown for each premium service. The four core package buttons remain unchanged.', request: 'Request this configuration →', reset: 'Reset', noSelection: 'Select a starting package', contactMessage: 'Hello SEPANG TECH GROUP,\n\nI am interested in this configuration:\n'
+    servicesEyebrow: 'Productized services', servicesTitle: 'Premium services with clear, fixed entry pricing.', servicesLead: 'Choose a focused service without starting a full custom project. Final scope is confirmed before delivery.', choose: 'Add to estimator →', pay: 'Pay with PayPal →', subscribe: 'Subscribe →', oneTime: 'one-time', monthly: '/ month', estimatorEyebrow: 'Project configurator', estimatorTitle: 'Build your project.', estimatorLead: 'Select a starting package and optional services. The result is an indicative estimate, not a binding quotation.', base: 'Starting package', addons: 'Optional services', launch: 'Due at start', monthlyTotal: 'Monthly services', total: 'Combined first-month view', note: 'One-time services use hosted PayPal payment links. Monthly services use real PayPal subscription plans. The four core package buttons remain unchanged.', request: 'Request this configuration →', reset: 'Reset', noSelection: 'Select a starting package', contactMessage: 'Hello SEPANG TECH GROUP,\n\nI am interested in this configuration:\n'
   } : {
-    servicesEyebrow: 'Продуктови услуги', servicesTitle: 'Премиум услуги с ясни фиксирани начални цени.', servicesLead: 'Изберете конкретна услуга, без да започвате пълен custom проект. Финалният обхват се потвърждава преди изпълнение.', choose: 'Добави в конфигуратора →', pay: 'Плати с PayPal →', oneTime: 'еднократно', monthly: '/ месец', estimatorEyebrow: 'Конфигуратор на проект', estimatorTitle: 'Изгради своя проект.', estimatorLead: 'Изберете основен пакет и допълнителни услуги. Резултатът е ориентировъчна инвестиция, а не обвързваща оферта.', base: 'Основен пакет', addons: 'Допълнителни услуги', total: 'Ориентировъчна инвестиция', note: 'Всяка премиум услуга има собствена PayPal платежна връзка. Четирите основни пакета запазват досегашните си платежни връзки.', request: 'Заяви тази конфигурация →', reset: 'Изчисти', noSelection: 'Изберете основен пакет', contactMessage: 'Здравейте, SEPANG TECH GROUP,\n\nИнтересувам се от следната конфигурация:\n'
+    servicesEyebrow: 'Продуктови услуги', servicesTitle: 'Премиум услуги с ясни фиксирани начални цени.', servicesLead: 'Изберете конкретна услуга, без да започвате пълен custom проект. Финалният обхват се потвърждава преди изпълнение.', choose: 'Добави в конфигуратора →', pay: 'Плати с PayPal →', subscribe: 'Абонирай се →', oneTime: 'еднократно', monthly: '/ месец', estimatorEyebrow: 'Конфигуратор на проект', estimatorTitle: 'Изгради своя проект.', estimatorLead: 'Изберете основен пакет и допълнителни услуги. Резултатът е ориентировъчна инвестиция, а не обвързваща оферта.', base: 'Основен пакет', addons: 'Допълнителни услуги', launch: 'Дължимо при старт', monthlyTotal: 'Месечни услуги', total: 'Обобщение за първия месец', note: 'Еднократните услуги използват PayPal платежни връзки. Месечните услуги използват реални PayPal абонаментни планове. Четирите основни пакета запазват досегашните си платежни връзки.', request: 'Заяви тази конфигурация →', reset: 'Изчисти', noSelection: 'Изберете основен пакет', contactMessage: 'Здравейте, SEPANG TECH GROUP,\n\nИнтересувам се от следната конфигурация:\n'
   };
 
   const addonCopy = isEnglish ? {
@@ -80,16 +80,23 @@ function injectPremiumLayer(BASE_PRODUCTS, ADDONS, calculateEstimate, reveal) {
   const serviceSection = document.createElement('section');
   serviceSection.id = 'premium-services';
   serviceSection.className = 'section section-soft premium-layer';
-  const serviceCards = Object.entries(addonCopy).map(([key, [label, price, cadence]]) => `
-    <article class="product-card reveal">
-      <div class="product-top"><span>${escapeHtml(ADDONS[key].label.toUpperCase())}</span><b>${price}</b></div>
-      <h3>${escapeHtml(label)}</h3>
-      <p>${cadence === '/ месец' || cadence === '/ month' ? (isEnglish ? 'Ongoing service for continuous improvement and support.' : 'Текуща услуга за непрекъснато развитие и поддръжка.') : (isEnglish ? 'Focused delivery with a clearly defined starting scope.' : 'Фокусирана услуга с ясно дефиниран начален обхват.')}</p>
-      <div class="product-actions">
-        <button class="product-add" type="button" data-addon="${key}">${t.choose}</button>
-        <a class="product-pay" href="${ADDONS[key].paymentUrl}" target="_blank" rel="noopener noreferrer">${t.pay}</a>
-      </div>
-    </article>`).join('');
+  const serviceCards = Object.entries(addonCopy).map(([key, [label, price, cadence]]) => {
+    const item = ADDONS[key];
+    const isMonthly = item.cadence === 'monthly';
+    const paymentAction = isMonthly
+      ? `<div class="paypal-subscription" data-plan-id="${escapeHtml(item.planId)}" data-label="${escapeHtml(label)}"></div>`
+      : `<a class="product-pay" href="${escapeHtml(item.paymentUrl)}" target="_blank" rel="noopener noreferrer">${t.pay}</a>`;
+    return `
+      <article class="product-card reveal">
+        <div class="product-top"><span>${escapeHtml(item.label.toUpperCase())}</span><b>${price}</b></div>
+        <h3>${escapeHtml(label)}</h3>
+        <p>${isMonthly ? (isEnglish ? 'Recurring monthly service for continuous improvement and support.' : 'Месечна услуга за непрекъснато развитие, сигурност и поддръжка.') : (isEnglish ? 'Focused delivery with a clearly defined starting scope.' : 'Фокусирана услуга с ясно дефиниран начален обхват.')}</p>
+        <div class="product-actions">
+          <button class="product-add" type="button" data-addon="${escapeHtml(key)}">${t.choose}</button>
+          ${paymentAction}
+        </div>
+      </article>`;
+  }).join('');
 
   serviceSection.innerHTML = `
     <div class="wrap">
@@ -103,9 +110,9 @@ function injectPremiumLayer(BASE_PRODUCTS, ADDONS, calculateEstimate, reveal) {
   const estimator = document.createElement('section');
   estimator.id = 'estimator';
   estimator.className = 'section dark-section premium-layer';
-  const baseOptions = Object.entries(BASE_PRODUCTS).map(([key, product]) => `<option value="${key}">${escapeHtml(product.label)} — €${product.price.toFixed(2)}</option>`).join('');
+  const baseOptions = Object.entries(BASE_PRODUCTS).map(([key, product]) => `<option value="${escapeHtml(key)}">${escapeHtml(product.label)} — €${product.price.toFixed(2)}</option>`).join('');
   const addonChecks = Object.entries(addonCopy).map(([key, [label, price, cadence]]) => `
-    <label class="estimate-option"><input type="checkbox" value="${key}"><span><strong>${escapeHtml(label)}</strong><small>${price} ${cadence}</small></span></label>`).join('');
+    <label class="estimate-option"><input type="checkbox" value="${escapeHtml(key)}"><span><strong>${escapeHtml(label)}</strong><small>${price} ${cadence}</small></span></label>`).join('');
   estimator.innerHTML = `
     <div class="wrap estimator-grid">
       <div class="estimator-copy reveal">
@@ -118,6 +125,10 @@ function injectPremiumLayer(BASE_PRODUCTS, ADDONS, calculateEstimate, reveal) {
         <label class="estimate-label">${t.base}<select id="estimate-base"><option value="">${t.noSelection}</option>${baseOptions}</select></label>
         <div class="estimate-label">${t.addons}</div>
         <div class="estimate-options">${addonChecks}</div>
+        <div class="estimate-breakdown">
+          <div><span>${t.launch}</span><strong id="estimate-launch">€0.00</strong></div>
+          <div><span>${t.monthlyTotal}</span><strong id="estimate-monthly">€0.00</strong></div>
+        </div>
         <div class="estimate-total"><span>${t.total}</span><strong id="estimate-total" aria-live="polite">€0.00</strong></div>
         <div class="estimate-actions"><button class="btn btn-light" id="estimate-request" type="button">${t.request}</button><button class="btn btn-outline" id="estimate-reset" type="button">${t.reset}</button></div>
       </div>
@@ -128,11 +139,33 @@ function injectPremiumLayer(BASE_PRODUCTS, ADDONS, calculateEstimate, reveal) {
   serviceSection.querySelectorAll('.reveal').forEach((element) => reveal.observe(element));
   estimator.querySelectorAll('.reveal').forEach((element) => reveal.observe(element));
 
+  const loadPayPal = () => {
+    const monthlyButtons = [...document.querySelectorAll('.paypal-subscription[data-plan-id]')];
+    if (!monthlyButtons.length || window.paypal) {
+      renderPayPalButtons(monthlyButtons, isEnglish, t);
+      return;
+    }
+    if (document.querySelector('script[data-sepang-paypal]')) return;
+    const script = document.createElement('script');
+    script.src = 'https://www.paypal.com/sdk/js?client-id=BAAwAOX8YivoshgObV1N0aA4bR9FIueXriBgZtXSzkmpAc0itgZ50Wuon3gnhAV-uPJWeKhNGCIS87S768&vault=true&intent=subscription';
+    script.dataset.sepangPaypal = 'true';
+    script.onload = () => renderPayPalButtons(monthlyButtons, isEnglish, t);
+    script.onerror = () => {
+      monthlyButtons.forEach((container) => { container.innerHTML = `<a class="product-pay" href="${escapeHtml(buildPayPalPlanFallback(container.dataset.planId))}" target="_blank" rel="noopener noreferrer">${isEnglish ? 'Open PayPal →' : 'Отвори PayPal →'}</a>`; });
+    };
+    document.head.appendChild(script);
+  };
+  loadPayPal();
+
   const baseSelect = document.querySelector('#estimate-base');
+  const launchEl = document.querySelector('#estimate-launch');
+  const monthlyEl = document.querySelector('#estimate-monthly');
   const totalEl = document.querySelector('#estimate-total');
   const checkboxes = [...document.querySelectorAll('.estimate-option input')];
   const renderTotal = () => {
     const result = calculateEstimate(baseSelect.value, checkboxes.filter((box) => box.checked).map((box) => box.value));
+    launchEl.textContent = `€${result.launchTotal.toFixed(2)}`;
+    monthlyEl.textContent = `€${result.monthly.toFixed(2)}${result.monthly ? (isEnglish ? ' / month' : ' / месец') : ''}`;
     totalEl.textContent = `€${result.total.toFixed(2)}`;
     document.querySelectorAll('.estimate-option').forEach((item) => item.classList.toggle('selected', item.querySelector('input').checked));
   };
@@ -140,22 +173,62 @@ function injectPremiumLayer(BASE_PRODUCTS, ADDONS, calculateEstimate, reveal) {
   checkboxes.forEach((box) => box.addEventListener('change', renderTotal));
 
   document.querySelectorAll('.product-add').forEach((button) => button.addEventListener('click', () => {
-    const target = document.querySelector(`.estimate-option input[value="${button.dataset.addon}"]`);
-    if (target) { target.checked = true; renderTotal(); document.querySelector('#estimator').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    const target = document.querySelector(`.estimate-option input[value="${CSS.escape(button.dataset.addon)}"]`);
+    if (target) {
+      target.checked = true;
+      renderTotal();
+      document.querySelector('#estimator').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }));
 
-  document.querySelector('#estimate-reset').addEventListener('click', () => { baseSelect.value = ''; checkboxes.forEach((box) => { box.checked = false; }); renderTotal(); });
+  document.querySelector('#estimate-reset').addEventListener('click', () => {
+    baseSelect.value = '';
+    checkboxes.forEach((box) => { box.checked = false; });
+    renderTotal();
+  });
+
   document.querySelector('#estimate-request').addEventListener('click', () => {
     const result = calculateEstimate(baseSelect.value, checkboxes.filter((box) => box.checked).map((box) => box.value));
-    if (!baseSelect.value) { baseSelect.focus(); return; }
+    if (!baseSelect.value) {
+      baseSelect.focus();
+      return;
+    }
     const selected = checkboxes.filter((box) => box.checked).map((box) => addonCopy[box.value][0]);
     const select = document.querySelector('select[name="service"]');
     const message = document.querySelector('textarea[name="message"]');
     const baseLabel = BASE_PRODUCTS[baseSelect.value].label;
+    const monthlyText = result.monthly ? `\n${isEnglish ? 'Monthly services' : 'Месечни услуги'}: €${result.monthly.toFixed(2)}${isEnglish ? ' / month' : ' / месец'}` : '';
     if (select) select.value = localizeServiceOption(baseSelect.value, isEnglish);
-    if (message) message.value = `${t.contactMessage}${baseLabel}${selected.length ? `\n${selected.map((item) => `+ ${item}`).join('\n')}` : ''}\n\n${t.total}: €${result.total.toFixed(2)}`;
+    if (message) {
+      message.value = `${t.contactMessage}${baseLabel}${selected.length ? `\n${selected.map((item) => `+ ${item}`).join('\n')}` : ''}\n\n${isEnglish ? 'Due at start' : 'Дължимо при старт'}: €${result.launchTotal.toFixed(2)}${monthlyText}`;
+    }
     document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
+}
+
+function renderPayPalButtons(containers, isEnglish, t) {
+  if (!window.paypal || !containers.length) return;
+  containers.forEach((container) => {
+    if (container.dataset.rendered === 'true') return;
+    const planId = container.dataset.planId;
+    if (!planId) return;
+    window.paypal.Buttons({
+      style: { shape: 'rect', color: 'gold', layout: 'vertical', label: 'subscribe' },
+      createSubscription: (data, actions) => actions.subscription.create({ plan_id: planId }),
+      onApprove: (data) => {
+        container.dataset.rendered = 'true';
+        container.insertAdjacentHTML('beforeend', `<small class="paypal-success">${escapeHtml(isEnglish ? 'Subscription started. ID: ' : 'Абонаментът е активиран. ID: ')}${escapeHtml(data.subscriptionID || '')}</small>`);
+      }
+    }).render(container).catch(() => {
+      container.innerHTML = `<span class="paypal-error">${escapeHtml(isEnglish ? 'PayPal could not load. Please try again.' : 'PayPal не успя да се зареди. Моля, опитайте отново.')}</span>`;
+    });
+  });
+}
+
+function buildPayPalPlanFallback(planId) {
+  // Subscription plans are intentionally rendered with the PayPal JS SDK.
+  // There is no safe generic public URL derived from a Plan ID alone.
+  return `https://www.paypal.com/billing/plans/${encodeURIComponent(planId)}`;
 }
 
 function localizeServiceOption(key, isEnglish) {
@@ -164,5 +237,5 @@ function localizeServiceOption(key, isEnglish) {
 }
 
 function escapeHtml(value) {
-  return String(value).replace(/[&<>'"]/g, (char) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' })[char]);
+  return String(value).replace(/[&<>'\"]/g, (char) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' })[char]);
 }
