@@ -12,12 +12,9 @@ const expected = {
   booking: 'https://www.paypal.com/ncp/payment/P9XK8ZXDGFHXQ',
   api: 'https://www.paypal.com/ncp/payment/WFNNLSK23L62L',
   crm: 'https://www.paypal.com/ncp/payment/URTAQQWG96V3G',
-  brand: 'https://www.paypal.com/ncp/payment/JLW89W2SPCLZ8',
-  maintenance: 'https://www.paypal.com/ncp/payment/NJVEMR2UHCXBN',
-  security: 'https://www.paypal.com/ncp/payment/N9YMYSDNJPSCU',
-  seoGrowth: 'https://www.paypal.com/ncp/payment/FBCZZZ3A8Y7EY',
-  ai: 'https://www.paypal.com/ncp/payment/26ZTBVEDN6Y5N'
+  brand: 'https://www.paypal.com/ncp/payment/JLW89W2SPCLZ8'
 };
 
 assert.deepEqual(PAYMENT_LINKS, expected);
-console.log('payment links test passed');
+assert.equal(Object.keys(PAYMENT_LINKS).length, 11);
+console.log('one-time payment links test passed');

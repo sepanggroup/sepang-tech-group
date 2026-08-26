@@ -17,20 +17,39 @@ export const ADDONS = {
   api: { label: 'API integration — starter', price: 299, paymentUrl: 'https://www.paypal.com/ncp/payment/WFNNLSK23L62L', cadence: 'one-time' },
   crm: { label: 'CRM integration — starter', price: 349, paymentUrl: 'https://www.paypal.com/ncp/payment/URTAQQWG96V3G', cadence: 'one-time' },
   brand: { label: 'Logo & mini brand kit', price: 249, paymentUrl: 'https://www.paypal.com/ncp/payment/JLW89W2SPCLZ8', cadence: 'one-time' },
-  maintenance: { label: 'Website maintenance', price: 49, paymentUrl: 'https://www.paypal.com/ncp/payment/NJVEMR2UHCXBN', cadence: 'monthly' },
-  security: { label: 'Security + backups', price: 69, paymentUrl: 'https://www.paypal.com/ncp/payment/N9YMYSDNJPSCU', cadence: 'monthly' },
-  seoGrowth: { label: 'SEO & GEO growth', price: 199, paymentUrl: 'https://www.paypal.com/ncp/payment/FBCZZZ3A8Y7EY', cadence: 'monthly' },
-  ai: { label: 'AI automation starter', price: 299, paymentUrl: 'https://www.paypal.com/ncp/payment/26ZTBVEDN6Y5N', cadence: 'monthly' }
+  maintenance: { label: 'Website maintenance', price: 49, planId: 'P-98944406YX3977206NKHOKNA', cadence: 'monthly' },
+  security: { label: 'Security + backups', price: 69, planId: 'P-4WD94670L61834622NKHOQHY', cadence: 'monthly' },
+  seoGrowth: { label: 'SEO & GEO growth', price: 199, planId: 'P-7HJ962506S651103BNKHOSIQ', cadence: 'monthly' },
+  ai: { label: 'AI automation starter', price: 299, planId: 'P-7LF56748BL111320TNKHOUAQ', cadence: 'monthly' }
 };
 
-export const PAYMENT_LINKS = Object.fromEntries(Object.entries(ADDONS).map(([key, value]) => [key, value.paymentUrl]));
+export const PAYMENT_LINKS = Object.fromEntries(
+  Object.entries(ADDONS)
+    .filter(([, value]) => value.paymentUrl)
+    .map(([key, value]) => [key, value.paymentUrl])
+);
+
+export const SUBSCRIPTION_PLANS = Object.fromEntries(
+  Object.entries(ADDONS)
+    .filter(([, value]) => value.planId)
+    .map(([key, value]) => [key, value.planId])
+);
 
 export function calculateEstimate(productKey, addonKeys = []) {
   const base = BASE_PRODUCTS[productKey]?.price ?? 0;
-  const addons = addonKeys.reduce((sum, key) => sum + (ADDONS[key]?.price ?? 0), 0);
+  const selected = addonKeys.map((key) => ADDONS[key]).filter(Boolean);
+  const oneTime = selected
+    .filter((item) => item.cadence !== 'monthly')
+    .reduce((sum, item) => sum + item.price, 0);
+  const monthly = selected
+    .filter((item) => item.cadence === 'monthly')
+    .reduce((sum, item) => sum + item.price, 0);
+  const launchTotal = Number((base + oneTime).toFixed(2));
   return {
     base,
-    addons,
-    total: Number((base + addons).toFixed(2))
+    oneTime,
+    monthly,
+    launchTotal,
+    total: Number((launchTotal + monthly).toFixed(2))
   };
 }
