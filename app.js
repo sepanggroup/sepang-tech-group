@@ -58,9 +58,9 @@ function injectPremiumLayer(BASE_PRODUCTS, ADDONS, calculateEstimate, reveal) {
   }
 
   const t = isEnglish ? {
-    servicesEyebrow: 'Productized services', servicesTitle: 'Premium services with clear, fixed entry pricing.', servicesLead: 'Choose a focused service without starting a full custom project. Final scope is confirmed before delivery.', choose: 'Add to estimator →', pay: 'Pay with PayPal →', subscribe: 'Subscribe →', oneTime: 'one-time', monthly: '/ month', estimatorEyebrow: 'Project configurator', estimatorTitle: 'Build your project.', estimatorLead: 'Select a starting package and optional services. The result is an indicative estimate, not a binding quotation.', base: 'Starting package', addons: 'Optional services', launch: 'Due at start', monthlyTotal: 'Monthly services', total: 'Combined first-month view', note: 'One-time services use hosted PayPal payment links. Monthly services use real PayPal subscription plans. The four core package buttons remain unchanged.', request: 'Request this configuration →', reset: 'Reset', noSelection: 'Select a starting package', contactMessage: 'Hello SEPANG TECH GROUP,\n\nI am interested in this configuration:\n'
+    servicesEyebrow: 'Productized services', servicesTitle: 'Premium services with clear, fixed entry pricing.', servicesLead: 'Choose a focused service without starting a full custom project. Final scope is confirmed before delivery.', choose: 'Add to estimator →', pay: 'Pay with PayPal →', oneTime: 'one-time', monthly: '/ month', estimatorEyebrow: 'Project configurator', estimatorTitle: 'Build your project.', estimatorLead: 'Select a starting package and optional services. The result is an indicative estimate, not a binding quotation.', base: 'Starting package', addons: 'Optional services', launch: 'Due at start', monthlyTotal: 'Monthly services', total: 'Combined first-month view', note: 'One-time services use hosted PayPal payment links. Monthly services use real PayPal subscription plans. The four core package buttons remain unchanged.', request: 'Request this configuration →', reset: 'Reset', noSelection: 'Select a starting package', contactMessage: 'Hello SEPANG TECH GROUP,\n\nI am interested in this configuration:\n'
   } : {
-    servicesEyebrow: 'Продуктови услуги', servicesTitle: 'Премиум услуги с ясни фиксирани начални цени.', servicesLead: 'Изберете конкретна услуга, без да започвате пълен custom проект. Финалният обхват се потвърждава преди изпълнение.', choose: 'Добави в конфигуратора →', pay: 'Плати с PayPal →', subscribe: 'Абонирай се →', oneTime: 'еднократно', monthly: '/ месец', estimatorEyebrow: 'Конфигуратор на проект', estimatorTitle: 'Изгради своя проект.', estimatorLead: 'Изберете основен пакет и допълнителни услуги. Резултатът е ориентировъчна инвестиция, а не обвързваща оферта.', base: 'Основен пакет', addons: 'Допълнителни услуги', launch: 'Дължимо при старт', monthlyTotal: 'Месечни услуги', total: 'Обобщение за първия месец', note: 'Еднократните услуги използват PayPal платежни връзки. Месечните услуги използват реални PayPal абонаментни планове. Четирите основни пакета запазват досегашните си платежни връзки.', request: 'Заяви тази конфигурация →', reset: 'Изчисти', noSelection: 'Изберете основен пакет', contactMessage: 'Здравейте, SEPANG TECH GROUP,\n\nИнтересувам се от следната конфигурация:\n'
+    servicesEyebrow: 'Продуктови услуги', servicesTitle: 'Премиум услуги с ясни фиксирани начални цени.', servicesLead: 'Изберете конкретна услуга, без да започвате пълен custom проект. Финалният обхват се потвърждава преди изпълнение.', choose: 'Добави в конфигуратора →', pay: 'Плати с PayPal →', oneTime: 'еднократно', monthly: '/ месец', estimatorEyebrow: 'Конфигуратор на проект', estimatorTitle: 'Изгради своя проект.', estimatorLead: 'Изберете основен пакет и допълнителни услуги. Резултатът е ориентировъчна инвестиция, а не обвързваща оферта.', base: 'Основен пакет', addons: 'Допълнителни услуги', launch: 'Дължимо при старт', monthlyTotal: 'Месечни услуги', total: 'Обобщение за първия месец', note: 'Еднократните услуги използват PayPal платежни връзки. Месечните услуги използват реални PayPal абонаментни планове. Четирите основни пакета запазват досегашните си платежни връзки.', request: 'Заяви тази конфигурация →', reset: 'Изчисти', noSelection: 'Изберете основен пакет', contactMessage: 'Здравейте, SEPANG TECH GROUP,\n\nИнтересувам се от следната конфигурация:\n'
   };
 
   const addonCopy = isEnglish ? {
@@ -142,16 +142,18 @@ function injectPremiumLayer(BASE_PRODUCTS, ADDONS, calculateEstimate, reveal) {
   const loadPayPal = () => {
     const monthlyButtons = [...document.querySelectorAll('.paypal-subscription[data-plan-id]')];
     if (!monthlyButtons.length || window.paypal) {
-      renderPayPalButtons(monthlyButtons, isEnglish, t);
+      renderPayPalButtons(monthlyButtons, isEnglish);
       return;
     }
     if (document.querySelector('script[data-sepang-paypal]')) return;
     const script = document.createElement('script');
     script.src = 'https://www.paypal.com/sdk/js?client-id=BAAwAOX8YivoshgObV1N0aA4bR9FIueXriBgZtXSzkmpAc0itgZ50Wuon3gnhAV-uPJWeKhNGCIS87S768&vault=true&intent=subscription';
     script.dataset.sepangPaypal = 'true';
-    script.onload = () => renderPayPalButtons(monthlyButtons, isEnglish, t);
+    script.onload = () => renderPayPalButtons(monthlyButtons, isEnglish);
     script.onerror = () => {
-      monthlyButtons.forEach((container) => { container.innerHTML = `<a class="product-pay" href="${escapeHtml(buildPayPalPlanFallback(container.dataset.planId))}" target="_blank" rel="noopener noreferrer">${isEnglish ? 'Open PayPal →' : 'Отвори PayPal →'}</a>`; });
+      monthlyButtons.forEach((container) => {
+        container.innerHTML = `<span class="paypal-error">${escapeHtml(isEnglish ? 'PayPal is temporarily unavailable. Please try again.' : 'PayPal временно не е наличен. Моля, опитайте отново.')}</span>`;
+      });
     };
     document.head.appendChild(script);
   };
@@ -206,7 +208,7 @@ function injectPremiumLayer(BASE_PRODUCTS, ADDONS, calculateEstimate, reveal) {
   });
 }
 
-function renderPayPalButtons(containers, isEnglish, t) {
+function renderPayPalButtons(containers, isEnglish) {
   if (!window.paypal || !containers.length) return;
   containers.forEach((container) => {
     if (container.dataset.rendered === 'true') return;
@@ -217,18 +219,24 @@ function renderPayPalButtons(containers, isEnglish, t) {
       createSubscription: (data, actions) => actions.subscription.create({ plan_id: planId }),
       onApprove: (data) => {
         container.dataset.rendered = 'true';
-        container.insertAdjacentHTML('beforeend', `<small class="paypal-success">${escapeHtml(isEnglish ? 'Subscription started. ID: ' : 'Абонаментът е активиран. ID: ')}${escapeHtml(data.subscriptionID || '')}</small>`);
+        const success = document.createElement('small');
+        success.className = 'paypal-success';
+        success.textContent = `${isEnglish ? 'Subscription started. ID: ' : 'Абонаментът е активиран. ID: '}${data.subscriptionID || ''}`;
+        container.appendChild(success);
+      },
+      onError: () => {
+        const error = document.createElement('small');
+        error.className = 'paypal-error';
+        error.textContent = isEnglish ? 'PayPal could not complete this subscription. Please try again.' : 'PayPal не успя да завърши абонамента. Моля, опитайте отново.';
+        container.appendChild(error);
       }
     }).render(container).catch(() => {
-      container.innerHTML = `<span class="paypal-error">${escapeHtml(isEnglish ? 'PayPal could not load. Please try again.' : 'PayPal не успя да се зареди. Моля, опитайте отново.')}</span>`;
+      const error = document.createElement('small');
+      error.className = 'paypal-error';
+      error.textContent = isEnglish ? 'PayPal could not load. Please try again.' : 'PayPal не успя да се зареди. Моля, опитайте отново.';
+      container.appendChild(error);
     });
   });
-}
-
-function buildPayPalPlanFallback(planId) {
-  // Subscription plans are intentionally rendered with the PayPal JS SDK.
-  // There is no safe generic public URL derived from a Plan ID alone.
-  return `https://www.paypal.com/billing/plans/${encodeURIComponent(planId)}`;
 }
 
 function localizeServiceOption(key, isEnglish) {
@@ -237,5 +245,5 @@ function localizeServiceOption(key, isEnglish) {
 }
 
 function escapeHtml(value) {
-  return String(value).replace(/[&<>'\"]/g, (char) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' })[char]);
+  return String(value).replace(/[&<>\'"]/g, (char) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' })[char]);
 }
