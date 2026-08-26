@@ -27,10 +27,11 @@ export const PAYMENT_LINKS = Object.fromEntries(Object.entries(ADDONS).map(([key
 
 export function calculateEstimate(productKey, addonKeys = []) {
   const base = BASE_PRODUCTS[productKey]?.price ?? 0;
-  const addons = addonKeys.reduce((sum, key) => sum + (ADDONS[key]?.price ?? 0), 0);
-  return {
-    base,
-    addons,
-    total: Number((base + addons).toFixed(2))
-  };
+  const baseForMonthly = base;
+  const selected = addonKeys.map((key) => ADDONS[key]).filter(Boolean);
+  const oneTime = selected.filter((item) => item.cadence !== 'monthly').reduce((sum, item) => sum + item.price, 0);
+  const monthly = selected.filter((item) => item.cadence === 'monthly').reduce((sum, item) => sum + item.price, 0);
+  const launchTotal = Number((baseForMonthly + oneTime).toFixed(2));
+  const total = Number((launchTotal + monthly).toFixed(2));
+  return { base, oneTime, monthly, launchTotal, total };
 }
