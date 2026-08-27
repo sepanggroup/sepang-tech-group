@@ -1,3 +1,18 @@
+/* Runtime safety: keep full-page captures and direct navigation from leaving reveal content hidden. */
+if (typeof document !== 'undefined') {
+  const revealSafety = (root) => {
+    root.querySelectorAll?.('.reveal:not(.visible)').forEach((element) => element.classList.add('visible'));
+  };
+  revealSafety(document);
+  new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      mutation.addedNodes.forEach((node) => {
+        if (node.nodeType === Node.ELEMENT_NODE) revealSafety(node);
+      });
+    });
+  }).observe(document.documentElement, { childList: true, subtree: true });
+}
+
 export const BASE_PRODUCTS = {
   website: { label: 'Business Website', price: 761.84, paymentUrl: 'https://www.paypal.com/ncp/payment/KBL65LTBNK568' },
   store: { label: 'Online Store', price: 1274.04, paymentUrl: 'https://www.paypal.com/ncp/payment/7AFUQ6PKWXG7W' },
